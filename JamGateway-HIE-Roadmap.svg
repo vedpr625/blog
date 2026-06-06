@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440">
+<defs>
+<marker id="a2" viewBox="0 0 10 10" refX="8" refY="5"
+        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0,1 L8,5 L0,9 Z" fill="#0D7A6E"/>
+    </marker>
+<filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>text{font-family:-apple-system,"Helvetica Neue",Helvetica,sans-serif}</style>
+</defs>
+<rect width="760" height="440" fill="#F0F7FF" rx="8"/>
+<text x="380" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#0D1F33">National Health Information Exchange — Component Roadmap</text>
+<text x="380" y="44" text-anchor="middle" font-size="10" fill="#5A8AA8">OpenHIE architecture — where the gateway fits and what comes next</text>
+<rect x="20" y="60" width="158" height="140" rx="8" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="2"/>
+<text x="99" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#0D7A6E">Phase 1 — DONE</text>
+<text x="99" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#0A5E54">Interoperability</text>
+<text x="99" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#0A5E54">Gateway</text>
+<text x="28" y="130" font-size="8.5" font-weight="600" fill="#0A5E54">JamGateway ✓</text>
+<text x="28" y="144" font-size="8.5" font-weight="600" fill="#0A5E54">Channel routing ✓</text>
+<text x="28" y="158" font-size="8.5" font-weight="600" fill="#0A5E54">JWT + SMART ✓</text>
+<text x="28" y="172" font-size="8.5" font-weight="600" fill="#0A5E54">IHE ATNA + BALP ✓</text>
+<text x="28" y="186" font-size="8.5" font-weight="600" fill="#0A5E54">OpenHIM compat. ✓</text>
+<rect x="200" y="60" width="158" height="140" rx="8" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="279" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#7C3AED">Phase 2 — NEXT</text>
+<text x="279" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6">Client Registry</text>
+<text x="279" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6">(Master Patient Index)</text>
+<text x="208" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">HAPI FHIR MDM ✦</text>
+<text x="208" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Golden record ✦</text>
+<text x="208" y="158" font-size="8.5" font-weight="600" fill="#5B21B6">PIXm ITI-83 ✦</text>
+<text x="208" y="172" font-size="8.5" font-weight="600" fill="#5B21B6">PDQm ITI-78 ✦</text>
+<text x="208" y="186" font-size="8.5" font-weight="600" fill="#5B21B6">IHE PMIR ITI-93/94 ✦</text>
+<rect x="380" y="60" width="158" height="140" rx="8" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
+<text x="459" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#D97706">Phase 3</text>
+<text x="459" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#92400E">Facility Registry</text>
+<text x="388" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">mCSD ITI-90 ✦</text>
+<text x="388" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Location codes ✦</text>
+<text x="388" y="158" font-size="8.5" font-weight="400" fill="#64748B">Already deployed*</text>
+<text x="388" y="172" font-size="8.5" font-weight="400" fill="#64748B">Connect via config</text>
+<text x="388" y="186" font-size="8.5" font-weight="400" fill="#64748B">No new software</text>
+<rect x="560" y="60" width="178" height="140" rx="8" fill="#F0F9FF" stroke="#0369A1" stroke-width="1"/>
+<text x="649" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#0369A1">Phase 4</text>
+<text x="649" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#075985">Shared Health Record</text>
+<text x="649" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#075985">+ Terminology</text>
+<text x="568" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">HAPI FHIR JPA ✦</text>
+<text x="568" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Already in stack ✦</text>
+<text x="568" y="158" font-size="8.5" font-weight="600" fill="#5B21B6">SNOMED + LOINC ✦</text>
+<text x="568" y="172" font-size="8.5" font-weight="600" fill="#5B21B6">ICD-10 coding ✦</text>
+<text x="568" y="186" font-size="8.5" font-weight="400" fill="#64748B">FHIR R4 native</text>
+<line x1="178" y1="130" x2="200" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
+<line x1="358" y1="130" x2="380" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
+<line x1="538" y1="130" x2="560" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
+<text x="99" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#0D7A6E">← YOU ARE HERE</text>
+<line x1="99" y1="213" x2="99" y2="202" stroke="#0D7A6E" stroke-width="1"/>
+<text x="380" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#1B4F8A">How the components talk to each other</text>
+<rect x="20" y="260" width="80" height="44" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+<text x="60" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">Hospital</text>
+<text x="60" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">HIS</text>
+<rect x="130" y="260" width="80" height="44" rx="5" fill="#EDE9FE" stroke="#9B6FD4" stroke-width="1"/>
+<text x="170" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">SMART</text>
+<text x="170" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">App</text>
+<rect x="250" y="260" width="100" height="44" rx="5" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="1"/>
+<text x="300" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#0A5E54">JamGateway</text>
+<rect x="380" y="260" width="100" height="44" rx="5" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="430" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Client Registry</text>
+<text x="430" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">(MPI)</text>
+<rect x="510" y="260" width="100" height="44" rx="5" fill="#F0F9FF" stroke="#0369A1" stroke-width="1"/>
+<text x="560" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#075985">FHIR Server</text>
+<text x="560" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#075985">(NeHR)</text>
+<rect x="640" y="260" width="110" height="44" rx="5" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
+<text x="695" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Audit Repo</text>
+<text x="695" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">(ATNA+BALP)</text>
+<line x1="100" y1="282" x2="130" y2="282" stroke="#EF4444" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="115" y="277" text-anchor="middle" font-size="7.5" fill="#EF4444" font-weight="600">HL7v2 MLLP</text>
+<line x1="210" y1="282" x2="250" y2="282" stroke="#7C3AED" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="230" y="277" text-anchor="middle" font-size="7.5" fill="#7C3AED" font-weight="600">FHIR R4</text>
+<line x1="350" y1="282" x2="380" y2="282" stroke="#0D7A6E" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="365" y="277" text-anchor="middle" font-size="7.5" fill="#0D7A6E" font-weight="600">PIXm/PDQm</text>
+<line x1="480" y1="278" x2="510" y2="278" stroke="#0369A1" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="495" y="273" text-anchor="middle" font-size="7.5" fill="#0369A1" font-weight="600">ITI-78</text>
+<line x1="480" y1="286" x2="510" y2="286" stroke="#0369A1" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="495" y="281" text-anchor="middle" font-size="7.5" fill="#0369A1" font-weight="600">ITI-65</text>
+<line x1="610" y1="282" x2="640" y2="282" stroke="#D97706" stroke-width="1.2" marker-end="url(#a2)"/>
+<text x="625" y="277" text-anchor="middle" font-size="7.5" fill="#D97706" font-weight="600">ATNA/BALP</text>
+<rect x="20" y="325" width="720" height="100" rx="6" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<rect x="20" y="325" width="5" height="100" rx="0" fill="#7C3AED"/>
+<text x="40" y="344" font-size="11" font-weight="800" fill="#5B21B6">★ Coming next: Client Registry (Master Patient Index) — the most critical missing piece</text>
+<text x="40" y="362" font-size="9" fill="#4C1D95">Without a Client Registry, the gateway routes requests correctly but systems cannot confirm two records at different facilities belong to the same patient.</text>
+<text x="40" y="378" font-size="9" fill="#4C1D95">HAPI FHIR MDM module implements golden record management, probabilistic matching, Patient/$match, and IHE PMIR (ITI-93/94)</text>
+<text x="40" y="394" font-size="9" fill="#4C1D95">— all on infrastructure already in the JamGateway stack. No new service, no new database, no new language runtime.</text>
+<text x="40" y="414" font-size="8" fill="#6D28D9" font-weight="600">IHE PMIR ITI-93: Mobile Patient Identity Feed (push)  ·  ITI-94: Subscribe to Patient Updates  ·  HAPI MDM: configurable JSON matching rules  ·  Patient/$match operation</text>
+</svg>

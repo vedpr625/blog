@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Why We Replaced OpenHIM With a Single Java JAR — and Built a Better Health Gateway in the Process</title>
+<meta name="description" content="A deep technical look at OpenHIM's limitations, why a Java/Spring Boot replacement makes sense for national health infrastructure, and how JamGateway delivers ~99% OpenHIM parity with one deployable unit instead of five services."/>
+<meta name="keywords" content="OpenHIM alternative, health interoperability gateway, FHIR gateway, HL7v2, IHE ATNA, SMART on FHIR, health information exchange, HIE, OpenHIE, JamGateway"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:      #1B4F8A;
+  --teal:      #0D7A6E;
+  --ink:       #0D1F33;
+  --ink-mid:   #1A3A58;
+  --ink-soft:  #2C5070;
+  --muted:     #5A8AA8;
+  --border:    #C8DCF0;
+  --ice:       #F4F9FF;
+  --ice-mid:   #E8F2FC;
+  --teal-pale: #EAF7F5;
+  --purple:    #5B21B6;
+  --amber:     #D97706;
+  --red:       #DC2626;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth }
+body {
+  font-family:'Source Serif 4', Georgia, serif;
+  font-size:18px;
+  line-height:1.8;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Layout ── */
+.post-header {
+  background:linear-gradient(160deg,#0D2B4E 0%,#1B4F8A 60%,#0D7A6E 100%);
+  padding:4rem 2rem 3rem;
+  text-align:center;
+}
+.post-header .category {
+  display:inline-block;
+  background:rgba(13,122,110,.25);
+  border:1px solid rgba(26,158,144,.4);
+  color:#1A9E90;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:4px 14px;
+  border-radius:20px;
+  margin-bottom:1.25rem;
+}
+.post-header h1 {
+  font-family:'Source Serif 4',serif;
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:700;
+  color:#fff;
+  line-height:1.2;
+  letter-spacing:-.02em;
+  max-width:820px;
+  margin:0 auto 1.25rem;
+}
+.post-header .subtitle {
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  color:rgba(255,255,255,.72);
+  max-width:640px;
+  margin:0 auto 2rem;
+  line-height:1.65;
+}
+.post-meta {
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  color:rgba(255,255,255,.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.post-meta strong { color:rgba(255,255,255,.8) }
+.post-meta .tag {
+  background:rgba(255,255,255,.1);
+  padding:2px 10px;
+  border-radius:20px;
+  font-size:11px;
+}
+
+/* ── Article body ── */
+.article-body {
+  max-width:780px;
+  margin:0 auto;
+  padding:3rem 2rem;
+}
+
+/* ── Typography ── */
+h2 {
+  font-family:'Source Serif 4',serif;
+  font-size:1.7rem;
+  font-weight:700;
+  color:var(--ink);
+  margin:3rem 0 1rem;
+  letter-spacing:-.02em;
+  line-height:1.25;
+  padding-bottom:.5rem;
+  border-bottom:2px solid var(--ice-mid);
+}
+h3 {
+  font-family:'Inter',sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--navy);
+  margin:2rem 0 .75rem;
+  letter-spacing:-.01em;
+}
+p { margin-bottom:1.4rem }
+p:last-child { margin-bottom:0 }
+
+strong { color:var(--ink-mid); font-weight:600 }
+em { font-style:italic; color:var(--ink-soft) }
+
+a { color:var(--teal); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px }
+a:hover { color:var(--navy) }
+
+/* ── Pull quote ── */
+.pull-quote {
+  border-left:4px solid var(--teal);
+  background:var(--teal-pale);
+  padding:1.25rem 1.5rem;
+  margin:2rem 0;
+  border-radius:0 6px 6px 0;
+}
+.pull-quote p {
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--ink-mid);
+  margin:0;
+  line-height:1.65;
+}
+
+/* ── Callout boxes ── */
+.callout {
+  border-radius:8px;
+  padding:1.25rem 1.5rem;
+  margin:2rem 0;
+  display:flex;
+  gap:1rem;
+}
+.callout.info { background:var(--ice-mid); border:1px solid var(--border) }
+.callout.warn { background:#FFFBEB; border:1px solid #FCD34D }
+.callout.teal { background:var(--teal-pale); border:1px solid #8DD0C8 }
+.callout.purple { background:#F0EBFF; border:1px solid #9B6FD4 }
+.callout-icon { font-size:20px; flex-shrink:0; margin-top:2px }
+.callout-body { flex:1 }
+.callout-body strong { display:block; margin-bottom:.3rem; font-family:'Inter',sans-serif; font-size:14px }
+.callout-body p { font-size:15px; line-height:1.65; margin:0; color:var(--ink-soft) }
+
+/* ── Code ── */
+code {
+  font-family:'JetBrains Mono',monospace;
+  font-size:.82em;
+  background:var(--ice-mid);
+  color:var(--navy);
+  padding:2px 7px;
+  border-radius:4px;
+  border:1px solid var(--border);
+}
+pre {
+  background:#0D1F33;
+  border-radius:8px;
+  padding:1.5rem;
+  overflow-x:auto;
+  margin:1.75rem 0;
+}
+pre code {
+  background:none;
+  border:none;
+  color:rgba(200,228,244,.9);
+  font-size:13px;
+  line-height:1.8;
+  padding:0;
+}
+.code-comment { color:rgba(255,255,255,.3); font-style:italic }
+.code-key     { color:#F97583 }
+.code-val     { color:#85E89D }
+.code-url     { color:#6AAAC8 }
+
+/* ── SVG diagrams ── */
+.diagram-wrap {
+  margin:2.5rem -1rem;
+  text-align:center;
+}
+.diagram-wrap svg, .diagram-wrap img {
+  max-width:100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 4px 24px rgba(27,79,138,.1);
+}
+.diagram-caption {
+  font-family:'Inter',sans-serif;
+  font-size:12.5px;
+  color:var(--muted);
+  margin-top:.6rem;
+  font-style:italic;
+}
+
+/* ── Comparison table ── */
+.cmp-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  font-family:'Inter',sans-serif;
+  margin:2rem 0;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(27,79,138,.08);
+}
+.cmp-table th {
+  background:var(--navy);
+  color:#fff;
+  padding:.65rem 1rem;
+  text-align:left;
+  font-size:12px;
+  letter-spacing:.03em;
+}
+.cmp-table th.jg { background:var(--teal) }
+.cmp-table td {
+  padding:.6rem 1rem;
+  border-bottom:1px solid var(--ice-mid);
+  color:var(--ink-soft);
+  vertical-align:top;
+}
+.cmp-table tr:last-child td { border-bottom:none }
+.cmp-table tr:nth-child(even) td { background:var(--ice) }
+.cmp-table td:first-child { font-weight:600; color:var(--ink-mid) }
+.cmp-table td.jg { color:var(--teal); font-weight:600 }
+.ck { color:var(--teal); font-weight:700 }
+.xx { color:var(--red); font-weight:700 }
+.ah { color:var(--purple); font-weight:700 }
+.pt { color:var(--amber); font-weight:700 }
+
+/* ── Section divider ── */
+.section-divider {
+  border:none;
+  border-top:1px solid var(--ice-mid);
+  margin:3rem 0;
+}
+
+/* ── Inline stat row ── */
+.stat-row {
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin:1.75rem 0;
+}
+.stat-item {
+  flex:1;
+  min-width:130px;
+  background:var(--ice);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1rem 1.25rem;
+  text-align:center;
+}
+.stat-item .num {
+  display:block;
+  font-size:2rem;
+  font-weight:800;
+  color:var(--teal);
+  letter-spacing:-.03em;
+  font-family:'Inter',sans-serif;
+  line-height:1;
+}
+.stat-item .lbl {
+  display:block;
+  font-size:12px;
+  font-family:'Inter',sans-serif;
+  color:var(--muted);
+  margin-top:.25rem;
+}
+
+/* ── Author box ── */
+.author-box {
+  background:var(--ice);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.5rem;
+  margin:3rem 0 1rem;
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+.author-avatar {
+  width:54px; height:54px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--teal));
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; flex-shrink:0;
+}
+.author-info { flex:1 }
+.author-name { font-family:'Inter',sans-serif; font-weight:700; color:var(--ink); font-size:15px }
+.author-title { font-family:'Inter',sans-serif; font-size:12px; color:var(--muted); margin-bottom:.4rem }
+.author-bio { font-family:'Inter',sans-serif; font-size:13px; color:var(--ink-soft); line-height:1.6 }
+
+/* ── Tags ── */
+.post-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin:1.5rem 0;
+}
+.post-tags a {
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  background:var(--ice-mid);
+  border:1px solid var(--border);
+  color:var(--navy);
+  padding:3px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+.post-tags a:hover { background:var(--ice-mid); border-color:var(--navy) }
+
+@media(max-width:640px){
+  .article-body { padding:2rem 1.25rem }
+  h2 { font-size:1.4rem }
+  .diagram-wrap { margin:2rem -.75rem }
+  .stat-row { flex-direction:column }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Post Header ── -->
+<header class="post-header">
+  <div class="category">Health Informatics · Open Source · Architecture</div>
+  <h1>Why We Replaced OpenHIM With a Single Java JAR — and Built a Better Health Gateway in the Process</h1>
+  <p class="subtitle">A deep technical analysis of OpenHIM's structural limitations, what a modern Java/Spring Boot alternative looks like, and why national-scale health infrastructure deserves better foundations.</p>
+  <div class="post-meta">
+    <span><strong>Author:</strong> Akhil Ester</span>
+    <span><strong>Date:</strong> June 2026</span>
+    <span><strong>Reading time:</strong> ~18 min</span>
+    <span class="tag">OpenHIM</span>
+    <span class="tag">FHIR</span>
+    <span class="tag">Java</span>
+    <span class="tag">HIE</span>
+    <span class="tag">IHE</span>
+  </div>
+</header>
+
+<!-- 
+==============================================
+WORDPRESS PUBLISHING INSTRUCTIONS
+==============================================
+BEFORE PUBLISHING:
+1. Upload all 4 SVG files to Media Library
+2. Replace each placeholder below with the actual WordPress media URL:
+   - REPLACE WITH WORDPRESS MEDIA URL: JamGateway-OpenhimPain.svg
+   - REPLACE WITH WORDPRESS MEDIA URL: JamGateway-Page1.svg  
+   - REPLACE WITH WORDPRESS MEDIA URL: JamGateway-Internals.svg
+   - REPLACE WITH WORDPRESS MEDIA URL: JamGateway-HIE-Roadmap.svg
+3. Paste the <style> block into Appearance → Customise → Additional CSS
+4. Use Ctrl+H in the editor to find/replace the placeholder comments
+==============================================
+-->
+<article class="article-body">
+
+<!-- ── Intro ── -->
+<p>Let me be straight with you. If you are running OpenHIM in production right now, you are probably doing fine. It works. The OpenHIE community is solid, the documentation is reasonable, and the mediator ecosystem gives you a lot for free. I am not writing this to trash-talk a project that has genuinely helped health interoperability in some very difficult operating environments.</p>
+
+<p>But if you are <em>evaluating</em> OpenHIM — whether to build a new national health information exchange, to replace an aging gateway deployment, or to support a SMART on FHIR app ecosystem — then you need to understand some things the README does not tell you. And you need to know that there is now a serious alternative.</p>
+
+<p>This post is the outcome of a complete ground-up reimplementation of the OpenHIM feature set in Java 17 + Spring Boot 3.3 + Apache Camel 4.8 + HAPI FHIR 7.4. The result is <strong>JamGateway</strong> — a single deployable JAR that replaces five OpenHIM services, achieves ~99% feature parity, and adds several capabilities OpenHIM simply does not have.</p>
+
+<div class="callout info">
+  <div class="callout-icon">💡</div>
+  <div class="callout-body">
+    <strong>Who should read this</strong>
+    <p>CTOs and engineering directors evaluating HIE gateway technology. Lead architects designing national-scale health platforms. Senior engineers maintaining OpenHIM in production who are wondering whether the upgrade path is getting harder or easier. And anyone who has ever received a 3am alert that the MongoDB replica set is down and the entire HIE is offline.</p>
+  </div>
+</div>
+
+<!-- ── Section 1 ── -->
+<h2>The Problem Nobody Talks About in the OpenHIM Docs</h2>
+
+<p>OpenHIM was designed in 2012-2014. At that time, Node.js was the exciting new thing, MongoDB was what you reached for when you needed flexibility, and the concept of a "microservice" that ran independently and communicated via HTTP was genuinely novel in the healthcare space. The architecture reflected the best thinking of its era.</p>
+
+<p>The problem is that era is now over a decade old, and the accumulation of decisions made in that context shows in the codebase. Not as a failure — as a natural consequence of software aging in a world that moves forward.</p>
+
+<div class="diagram-wrap">
+  <img src="<!-- REPLACE WITH WORDPRESS MEDIA URL: JamGateway-OpenhimPain.svg -->" alt="OpenHIM deployment reality diagram showing what you actually end up running vs what the README describes"/>
+  <div class="diagram-caption">What the README says vs what you actually end up running at 3am — the OpenHIM deployment reality most production teams know well.</div>
+</div>
+
+<p>Here is what a realistic OpenHIM deployment looks like when you actually need to connect a hospital using HL7v2, route to a FHIR R4 server, and maintain an IHE-compliant audit trail:</p>
+
+<p>You run <code>openhim-core-js</code> for the gateway itself — Node.js, backed by MongoDB. You run <code>openhim-console</code> separately — an Angular SPA that communicates with the core via API. You run the <strong>mapping mediator</strong> — another Node.js service, with its own MongoDB, because it needs a replica set to persist transformation rules. You run the <strong>FHIR proxy mediator</strong> — a separate Java service — because OpenHIM core cannot speak FHIR natively. And you write your own HL7v2 mediator, because that too is outside the core.</p>
+
+<p>That is five running processes, two separate databases (MongoDB for the core and another MongoDB replica set for the mapping mediator), and a maintenance matrix that grows combinatorially. When Node.js releases a security advisory, you patch three separate Node.js services. When MongoDB has a vulnerability, you patch two separate MongoDB installations.</p>
+
+<div class="pull-quote">
+  <p>"The biggest hidden cost of OpenHIM is not the software itself — it is the operational overhead of running five loosely-coupled services where one JAR would do."</p>
+</div>
+
+<p>And then there is the question nobody wants to answer directly: <strong>OpenHIM does not natively support JWT Bearer tokens or SMART on FHIR scopes.</strong> In 2026, when the entire digital health ecosystem is moving toward OAuth2 and SMART App Launch — when every major EHR vendor, every national framework, and every clinical app standard is built on JWT and SMART — OpenHIM's authentication story is still essentially mTLS and Basic auth. JWT validation has to be bolted on externally, which means yet another service in your deployment.</p>
+
+<!-- ── Section 2 ── -->
+<h2>What JamGateway Is — and What It Isn't</h2>
+
+<p>JamGateway is not a fork of OpenHIM. It is a ground-up reimplementation of the OpenHIM feature set in the Java ecosystem, using the best tools available in 2025 for each concern:</p>
+
+<ul style="margin:1rem 0 1.5rem 1.5rem;line-height:2">
+  <li><strong>Routing</strong> → Apache Camel 4.8 (dynamic routing, fan-out, MLLP, retry, dead-letter)</li>
+  <li><strong>FHIR</strong> → HAPI FHIR 7.4 (typed R4 client, XML↔JSON native, PDQm/MHD/PIXm)</li>
+  <li><strong>Security</strong> → Spring Security OAuth2 Resource Server (JWT, SMART scopes, mTLS, Basic auth)</li>
+  <li><strong>Admin UI</strong> → Thymeleaf + HTMX (9 screens, no npm, no Angular build step)</li>
+  <li><strong>Audit</strong> → IHE ATNA RFC 5425 TLS syslog + IHE BALP FHIR R4 AuditEvent (owned code, no IPF dependency)</li>
+  <li><strong>Alerts</strong> → Spring Mail + Twilio SMS (email and SMS on configurable error rate thresholds)</li>
+</ul>
+
+<p>What it isn't: a general-purpose API gateway. JamGateway is specifically built for the health interoperability domain. It knows about FHIR resources, IHE transactions, HL7v2 messages, SMART on FHIR scopes, and OpenHIM mediators. It is not trying to compete with Kong or Tyk for generic HTTP routing at 10,000 RPS.</p>
+
+<div class="diagram-wrap">
+  <img src="<!-- REPLACE WITH WORDPRESS MEDIA URL: JamGateway-Page1.svg -->" alt="JamGateway single JAR replacing five OpenHIM services — module mapping diagram"/>
+  <div class="diagram-caption">One JAR vs five OpenHIM services — every OpenHIM module mapped to its JamGateway equivalent class.</div>
+</div>
+
+<div class="stat-row">
+  <div class="stat-item"><span class="num">5</span><span class="lbl">OpenHIM services</span></div>
+  <div class="stat-item"><span class="num">→</span><span class="lbl"></span></div>
+  <div class="stat-item"><span class="num">1</span><span class="lbl">JamGateway JAR</span></div>
+  <div class="stat-item"><span class="num">~18K</span><span class="lbl">OpenHIM lines</span></div>
+  <div class="stat-item"><span class="num">→</span><span class="lbl"></span></div>
+  <div class="stat-item"><span class="num">5,872</span><span class="lbl">JamGateway lines</span></div>
+</div>
+
+<!-- ── Section 3 ── -->
+<h2>Why the Codebase Is 3× Smaller — Not Because We Cut Features</h2>
+
+<p>When I tell people JamGateway is 5,872 lines vs OpenHIM's ~18,000, the first question is always: "What did you cut?" The honest answer is: nothing meaningful. The difference is entirely architectural — not features removed, but framework choice eliminating the need to write code at all.</p>
+
+<h3>Spring Boot gave us ~8,000 lines for free</h3>
+
+<p>OpenHIM was written at a time when Node.js did not have mature enterprise frameworks. So the core team built session management, scheduling, email, JWT token handling, certificate management, and caching themselves. That is roughly 8,000 lines of infrastructure code that predates modern frameworks. JamGateway gets all of it from Spring Boot via configuration:</p>
+
+<pre><code class="language-yaml"><span class="code-comment"># Session management</span>
+<span class="code-key">spring.session.store-type</span>=<span class="code-val">redis</span>   <span class="code-comment"># or memory</span>
+
+<span class="code-comment"># Email alerts</span>
+<span class="code-key">spring.mail.host</span>=<span class="code-val">smtp.moh.gov</span>
+<span class="code-key">hie.alerts.enabled</span>=<span class="code-val">true</span>
+<span class="code-key">hie.alerts.recipients</span>=<span class="code-val">ops@moh.gov</span>
+
+<span class="code-comment"># JWT validation — one line to point at your Keycloak</span>
+<span class="code-key">spring.security.oauth2.resourceserver.jwt.issuer-uri</span>=<span class="code-val">https://auth.example.com/realms/health</span>
+
+<span class="code-comment"># Rate limiting — in-memory or Redis</span>
+<span class="code-key">jam.rate-limit.store</span>=<span class="code-val">redis</span></code></pre>
+
+<p>That is configuration, not code. Spring Boot's auto-configuration handles the rest.</p>
+
+<h3>Apache Camel gave us the HL7v2 mediator and the FHIR proxy for free</h3>
+
+<p>In OpenHIM, connecting an HL7v2-speaking hospital requires deploying the mapping mediator — a separate Node.js service with its own MongoDB. In JamGateway, it is a Camel route:</p>
+
+<pre><code class="language-java"><span class="code-comment">// Hl7v2MllpBridgeRoute.java — the entire HL7v2 MLLP bridge</span>
+<span class="code-key">from</span>(<span class="code-val">"mllp://0.0.0.0:{{jam.mllp.port}}"</span>)
+    .process(hl7v2Parser::parse)         <span class="code-comment">// HAPI HL7v2 2.6</span>
+    .process(hl7v2ToFhirMapper::map)     <span class="code-comment">// ADT A04/A08/A40, ORU R01 → FHIR R4</span>
+    .to(<span class="code-val">"{{jam.fhir.server.url}}/Patient"</span>)
+    .process(atnaService::auditAdtFeed); <span class="code-comment">// IHE ATNA ITI-8</span></code></pre>
+
+<p>That route — 8 lines — replaces the mapping mediator, its MongoDB cluster, and the custom HL7v2 mediator that every OpenHIM deployment ends up writing. The FHIR proxy mediator is similarly unnecessary because HAPI FHIR's client handles XML↔JSON conversion internally.</p>
+
+<h3>Owning the IHE code eliminated the IPF dependency</h3>
+
+<p>The standard Java approach to IHE ATNA is to pull in the IPF (Integration Profile Framework) library. IPF is a powerful but heavy Camel-based framework that can bring in 40+ transitive dependencies and constrains your Camel version. We extracted the IHE ATNA code directly from the IPF source and own it in JamGateway's codebase — three classes, ~400 lines total. No IPF. No dependency risk. If IPF stops being maintained tomorrow, JamGateway is completely unaffected.</p>
+
+<!-- ── Section 4 ── -->
+<h2>What JamGateway Does That OpenHIM Simply Cannot</h2>
+
+<p>Parity is one thing. But there are three areas where JamGateway is categorically ahead of OpenHIM — not because OpenHIM made bad choices, but because these capabilities either did not exist or were not priorities when OpenHIM was architected.</p>
+
+<h3>1. JWT Bearer tokens and SMART on FHIR — native, not bolted on</h3>
+
+<p>SMART App Launch is the standard for how clinical applications authenticate with healthcare APIs. It builds on OAuth2 and OpenID Connect, using JWT Bearer tokens with scopes like <code>patient/Patient.read</code> or <code>system/*.write</code>. Every major EHR — Epic, Cerner, MEDITECH — exposes SMART-compliant endpoints. Every national digital health framework that launched after 2018 mandates SMART compliance.</p>
+
+<p>OpenHIM does not validate JWT tokens. It was built around mTLS and Basic auth, which are fine for hospital-to-HIE connections but completely unworkable for a third-party app ecosystem. Adding JWT validation to OpenHIM requires an external service that validates the token before the request reaches OpenHIM — yet another process to maintain.</p>
+
+<p>In JamGateway, JWT validation is a Spring Security filter chain that runs before any routing happens:</p>
+
+<pre><code class="language-java"><span class="code-comment">// Chain 2: /fhir/** — stateless, JWT required</span>
+<span class="code-key">http</span>.oauth2ResourceServer(oauth2 -> oauth2
+    .jwt(jwt -> jwt.jwtAuthenticationConverter(smartJwtConverter())));
+
+<span class="code-comment">// SmartScopeEnforcer.java — runs inside the Camel route</span>
+<span class="code-comment">// Checks patient/Patient.read before the HAPI FHIR call</span>
+<span class="code-key">if</span> (!auth.getAuthorities().contains(<span class="code-val">"SCOPE_patient/Patient.read"</span>)) {
+    <span class="code-key">throw new</span> FhirAuthorizationException(<span class="code-val">"Insufficient SMART scope"</span>);
+}</code></pre>
+
+<p>The <code>.well-known/smart-configuration</code> discovery endpoint is served by <code>SmartConfigController</code> — a 40-line Spring MVC controller. Any SMART-capable app pointed at JamGateway will discover it correctly and initiate the OAuth2 flow.</p>
+
+<h3>2. IHE BALP — FHIR R4 AuditEvent, not just syslog</h3>
+
+<p>OpenHIM emits IHE ATNA audit events to a TLS syslog repository. That is the correct IHE behaviour for 2014. But the IHE BALP (Basic Audit Log Patterns) supplement — published in 2022 — defines how audit events should be represented as FHIR R4 <code>AuditEvent</code> resources and posted to a FHIR server. This is the direction the entire IHE community is moving: away from DICOM-encoded syslog and toward structured FHIR R4 resources that can be queried, analysed, and displayed in standard FHIR tooling.</p>
+
+<p>JamGateway emits audit events to three destinations simultaneously:</p>
+
+<ol style="margin:1rem 0 1.5rem 1.5rem;line-height:2">
+  <li><strong>RFC 5425 TLS syslog</strong> — IHE ATNA compliance, for legacy audit repositories</li>
+  <li><strong>Local PostgreSQL table</strong> — browsable in the admin console's ATNA viewer</li>
+  <li><strong>FHIR R4 AuditEvent POST</strong> — IHE BALP, for FHIR-native audit infrastructure</li>
+</ol>
+
+<p>The BALP destination is enabled with one configuration flag and points at any FHIR R4 server. OpenHIM does not have this at all.</p>
+
+<h3>3. HL7v2 and IHE FHIR transactions — native, not via mediators</h3>
+
+<p>This is the one that surprises people most. OpenHIM is often described as supporting HL7v2 and IHE FHIR transactions — but in practice, it supports them via mediators. The core itself is agnostic; it routes HTTP requests. The HL7v2 parsing, the FHIR transaction handling, and the IHE profile compliance live in separate mediator services.</p>
+
+<p>JamGateway handles all of this in the core, natively. ADT A04, A08, and A40 messages arrive over MLLP, get parsed by HAPI HL7v2, mapped to FHIR R4 Patient resources by <code>Hl7v2ToFhirMapper</code>, and posted to the FHIR server — all in one Camel route, in one JVM, with one audit trail. PDQm (ITI-78), MHD (ITI-65/67/68), and PIXm (ITI-83) are typed HAPI FHIR client calls, not HTTP string manipulation.</p>
+
+<!-- ── Section 5 ── -->
+<h2>The Feature Matrix — Honest, Verified, Line by Line</h2>
+
+<p>I want to be careful here. There is a lot of marketing material online comparing healthcare middleware products where the comparison is based on documentation rather than code. The table below is based on the JamGateway source code — verified line by line, class by class, against the OpenHIM feature set as documented at openhim.org and as observed in the GitHub repositories.</p>
+
+<table class="cmp-table">
+  <thead>
+    <tr><th>Feature</th><th>OpenHIM</th><th class="jg">JamGateway</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">Routing</td></tr>
+    <tr><td>Channel routing + hot-reload</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  ChannelRegistry + @Cacheable</span></td></tr>
+    <tr><td>Fan-out secondary routes</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  ChannelFanOutProcessor</span></td></tr>
+    <tr><td>Rate limiting — single node</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  InMemoryRateLimitStore (token bucket)</span></td></tr>
+    <tr><td>Rate limiting — clustered</td><td><span class="ck">✓  MongoDB</span></td><td class="jg"><span class="ck">✓  RedisRateLimitStore (INCR/EXPIRE)</span></td></tr>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">Security</td></tr>
+    <tr><td>mTLS + Basic auth per channel</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  ChannelAuthInterceptor + AliasKeyManager</span></td></tr>
+    <tr><td>Certificate management</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  CertificateManagementService (JDK-only)</span></td></tr>
+    <tr><td>JWT Bearer token validation</td><td><span class="xx">✗  not native</span></td><td class="jg"><span class="ah">★  Spring Security OAuth2 Resource Server</span></td></tr>
+    <tr><td>SMART on FHIR scopes + discovery</td><td><span class="xx">✗  none</span></td><td class="jg"><span class="ah">★  SmartScopeEnforcer + .well-known endpoint</span></td></tr>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">Transactions</td></tr>
+    <tr><td>Full tx log + body storage</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  TransactionLogProcessor + 32KB truncation</span></td></tr>
+    <tr><td>Manual + bulk transaction rerun</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  TransactionRerunService + originTxId chain</span></td></tr>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">Audit</td></tr>
+    <tr><td>IHE ATNA RFC 5425 TLS syslog</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  AtnaService (owned code, no IPF)</span></td></tr>
+    <tr><td>IHE BALP FHIR R4 AuditEvent</td><td><span class="xx">✗  none</span></td><td class="jg"><span class="ah">★  BalpAuditEventMapper + BalpSender</span></td></tr>
+    <tr><td>Email + SMS alerts</td><td><span class="ck">✓</span></td><td class="jg"><span class="ck">✓  AlertService (Spring Mail + Twilio)</span></td></tr>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">IHE / HL7v2</td></tr>
+    <tr><td>HL7v2 ADT + ORU over MLLP</td><td><span class="pt">~  via mediators</span></td><td class="jg"><span class="ah">★  native Camel MLLP + HAPI HL7v2</span></td></tr>
+    <tr><td>PDQm / MHD / PIXm</td><td><span class="pt">~  via mediators</span></td><td class="jg"><span class="ah">★  native HAPI FHIR R4 client</span></td></tr>
+    <tr><td colspan="3" style="background:var(--ice);font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.4rem 1rem">Mediators</td></tr>
+    <tr><td>OpenHIM mediator protocol</td><td><span class="ck">✓  full</span></td><td class="jg"><span class="ck">✓  MediatorService — full spec compatible</span></td></tr>
+    <tr><td>Mediator marketplace page</td><td><span class="ck">✓  openhim.org</span></td><td class="jg"><span class="xx">✗  not yet — sole remaining gap</span></td></tr>
+  </tbody>
+</table>
+
+<p style="font-size:13px;font-family:'Inter',sans-serif;color:var(--muted)"><span class="ck">✓ Parity</span> &nbsp;·&nbsp; <span class="pt">~ Partial / via mediators</span> &nbsp;·&nbsp; <span class="xx">✗ Gap</span> &nbsp;·&nbsp; <span class="ah">★ JamGateway ahead</span></p>
+
+<!-- ── Section 6 ── -->
+<h2>The Inside of the JAR — Layer by Layer</h2>
+
+<p>Understanding what lives inside the JAR is important if you are evaluating this for production use. A fat Spring Boot JAR can be a black box if you do not understand its internal organisation. JamGateway's 43 Java files are organised into four clearly separated layers:</p>
+
+<div class="diagram-wrap">
+  <img src="<!-- REPLACE WITH WORDPRESS MEDIA URL: JamGateway-Internals.svg -->" alt="JamGateway internal architecture — four layers: security, routing, audit, and admin"/>
+  <div class="diagram-caption">Inside jam-gateway.jar — four layers with clear separation of concerns. Each layer communicates downward, never sideways.</div>
+</div>
+
+<p>The <strong>Security Layer</strong> runs first — every request passes through Spring Security before Camel sees it. JWT validation, SMART scope extraction, mTLS client certificate verification — all done at the filter chain level. Camel routes are never invoked for an unauthenticated request.</p>
+
+<p>The <strong>Routing Layer</strong> is where Apache Camel lives. <code>FhirGatewayRoute</code> handles <code>/fhir/**</code> — it resolves the channel from <code>ChannelRegistry</code>, enforces per-channel rate limits, fires the primary HTTP call to the channel target, and optionally fans out to secondary routes asynchronously. <code>Hl7v2MllpBridgeRoute</code> listens on a separate MLLP port for HL7v2 messages.</p>
+
+<p>The <strong>Audit Layer</strong> is invoked from within the routing layer. Every transaction writes to <code>TransactionLogProcessor</code> (Postgres), every IHE transaction writes to <code>AtnaService</code> (TLS syslog + Postgres + optionally BALP). <code>AlertService</code> runs on a <code>@Scheduled</code> every 60 seconds and checks per-channel error rates.</p>
+
+<p>The <strong>Admin Layer</strong> is a separate Spring Security filter chain (<code>@Order(1)</code>) handling <code>/admin/**</code> — session-based, form login, CSRF enabled. The nine Thymeleaf + HTMX screens communicate with service classes that are shared with the routing layer.</p>
+
+<div class="callout teal">
+  <div class="callout-icon">🔑</div>
+  <div class="callout-body">
+    <strong>Two security chains, clean separation</strong>
+    <p>Chain 1 (<code>/admin/**</code>): session-based, form login, CSRF enabled. Chain 2 (<code>/fhir/**</code>, <code>/mediators/**</code>): stateless, JWT Bearer, CSRF disabled. This separation is critical — the admin console uses traditional web session management while the FHIR API uses stateless token validation. They never interfere with each other.</p>
+  </div>
+</div>
+
+<!-- ── Section 7 ── -->
+<h2>Why This Matters for National-Scale Health Infrastructure</h2>
+
+<p>I want to talk about something that is not in most technical blog posts about health middleware: what this actually means when you are building infrastructure that a country's healthcare system will depend on.</p>
+
+<p>National health information exchanges are not like typical enterprise software. They are public infrastructure, like roads or the electrical grid. They run 24/7. They connect thousands of facilities. When they go down, clinicians cannot access patient records. When they emit wrong audit data, there are regulatory consequences. When a security vulnerability is not patched because the upgrade path is too painful, patient data is at risk.</p>
+
+<p>The argument for simpler deployments is not primarily about developer convenience. It is about the long-term maintainability of critical public infrastructure by teams that will change over time, with budgets that are always constrained, in environments where the original engineers may not be available when something breaks three years from now.</p>
+
+<p>A single JAR that starts with <code>java -jar jam-gateway.jar</code>, configured entirely via environment variables, backed by a single PostgreSQL instance — this is infrastructure that a competent junior engineer can understand, maintain, debug, and recover from a failure. The alternative — five services, two MongoDB clusters, a custom HL7v2 mediator, an nginx layer — is infrastructure that requires institutional knowledge to operate.</p>
+
+<div class="callout warn">
+  <div class="callout-icon">⚠️</div>
+  <div class="callout-body">
+    <strong>The OpenCR warning</strong>
+    <p>If you are evaluating the OpenHIE reference implementations as a stack — OpenHIM + OpenCR + OpenMRS — please check the commit history on OpenCR before building on it. OpenCR (the client registry) was developed with USAID MEASURE Evaluation funding. That funding is gone. The repository shows minimal activity. OpenHIM itself shows declining commit frequency in 2024-2025. Building national infrastructure on software with uncertain maintenance futures is a strategic risk that deserves honest evaluation.</p>
+  </div>
+</div>
+
+<!-- ── Section 8 ── -->
+<h2>The Roadmap: What Comes After the Gateway</h2>
+
+<p>The gateway is the entry point to a health information exchange — the routing and security layer. But it is one of six components that a complete national HIE needs. Here is the honest picture of where this sits in the larger architecture, and what needs to be built or connected next.</p>
+
+<div class="diagram-wrap">
+  <img src="<!-- REPLACE WITH WORDPRESS MEDIA URL: JamGateway-HIE-Roadmap.svg -->" alt="National HIE component roadmap showing JamGateway as Phase 1, with Client Registry, Facility Registry, and Shared Health Record as subsequent phases"/>
+  <div class="diagram-caption">The OpenHIE architecture roadmap — where JamGateway fits and what comes next. The Client Registry is the most critical missing piece.</div>
+</div>
+
+<h3>The facility registry is already done (for most countries)</h3>
+
+<p>Many national health programmes have already deployed some form of facility registry — a master list of healthcare facilities with their codes, locations, and capabilities. The IHE mCSD (Mobile Care Services Discovery) profile defines how to expose this as a FHIR R4 <code>Location</code>/<code>Organization</code> resource endpoint. Connecting JamGateway to an existing facility registry is a channel configuration task — no new software.</p>
+
+<h3>The shared health record is the FHIR server you already have</h3>
+
+<p>The NeHR — National Electronic Health Record — is the longitudinal patient record across all facilities. In FHIR terms, this is a FHIR R4 JPA server. HAPI FHIR is already in the JamGateway stack as the FHIR client. Deploying HAPI FHIR JPA as the backend FHIR server gives you the NeHR. The gateway routes to it, the audit trail tracks every access, the SMART scopes control who can see what. The software is already there — the work is governance, data quality, and connectivity, not software development.</p>
+
+<h3>The client registry — this is the next real engineering problem</h3>
+
+<p>This is the piece that most genuinely blocks everything else. Without a Master Patient Index, the gateway can route requests correctly, but the receiving systems cannot confirm that the patient at Facility A and the patient at Facility B with slightly different name spellings are the same person. Duplicate records accumulate. Clinical decisions get made on incomplete histories.</p>
+
+<div class="callout purple">
+  <div class="callout-icon">★</div>
+  <div class="callout-body">
+    <strong>What comes next: IHE PMIR on HAPI FHIR MDM</strong>
+    <p>The right answer here is not to deploy OpenCR (Node.js, questionable maintenance), not to deploy SantéMPI (capable but heavyweight). The right answer is to enable HAPI FHIR's MDM (Master Data Management) module on the same FHIR server already in the stack. HAPI MDM adds golden record management, probabilistic patient matching with configurable JSON rules, <code>Patient/$match</code> operation, and the <code>:mdm</code> search parameter expansion. IHE PMIR (ITI-93 Mobile Patient Identity Feed and ITI-94 Subscribe to Patient Updates) gives you push-based identity federation — when a patient record changes at any facility, all subscribed systems receive the update. This is the future direction of the IHE standards, and it is implementable on infrastructure you already own. A blog post on this is coming.</p>
+  </div>
+</div>
+
+<!-- ── Section 9 ── -->
+<h2>Getting Started — Honest Quick Start</h2>
+
+<p>Here is what an actual deployment looks like. Not the aspirational <code>docker run</code> from the marketing page — the real thing.</p>
+
+<pre><code class="language-yaml"><span class="code-comment"># docker-compose.yml</span>
+<span class="code-key">services</span>:
+  <span class="code-key">jamgateway</span>:
+    <span class="code-key">image</span>: <span class="code-val">ghcr.io/your-org/jam-gateway:1.0</span>
+    <span class="code-key">environment</span>:
+      <span class="code-key">JAM_FHIR_SERVER_URL</span>: <span class="code-val">http://hapi-fhir:8080/fhir</span>
+      <span class="code-key">SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI</span>: <span class="code-val">https://auth.example.com/realms/health</span>
+      <span class="code-key">JAM_ADMIN_PASSWORD</span>: <span class="code-val">change-me-in-production</span>
+      <span class="code-key">JAM_ATNA_REPOSITORY_HOST</span>: <span class="code-val">audit.example.com</span>
+      <span class="code-key">JAM_ALERTS_ENABLED</span>: <span class="code-val">true</span>
+      <span class="code-key">JAM_ALERTS_RECIPIENTS</span>: <span class="code-val">ops@example.com</span>
+    <span class="code-key">ports</span>: [<span class="code-val">"8080:8080"</span>, <span class="code-val">"2575:2575"</span>]  <span class="code-comment"># HTTP + MLLP</span>
+    <span class="code-key">depends_on</span>: [<span class="code-val">postgres</span>]
+
+  <span class="code-key">postgres</span>:
+    <span class="code-key">image</span>: <span class="code-val">postgres:16</span>
+    <span class="code-key">environment</span>:
+      <span class="code-key">POSTGRES_DB</span>: <span class="code-val">jamgateway</span>
+      <span class="code-key">POSTGRES_PASSWORD</span>: <span class="code-val">change-me</span>
+
+<span class="code-comment"># Two services. That's it. Admin console at http://localhost:8080/admin</span></code></pre>
+
+<p>Admin console is at <code>http://localhost:8080/admin</code>. SMART discovery endpoint is at <code>http://localhost:8080/.well-known/smart-configuration</code>. FHIR gateway is at <code>http://localhost:8080/fhir/</code> — JWT Bearer token required. MLLP port 2575 for HL7v2.</p>
+
+<p>An OpenHIM mediator connects identically — it posts its registration JSON to <code>POST http://localhost:8080/mediators</code> using <code>openhim-mediator-utils</code>. The endpoint is protocol-compatible.</p>
+
+<!-- ── Section 10 — Conclusion ── -->
+<hr class="section-divider"/>
+
+<h2>Should You Switch From OpenHIM to JamGateway?</h2>
+
+<p>If you are running a stable OpenHIM deployment with a team that knows it well and no immediate requirement for JWT/SMART or FHIR-native audit — probably not immediately. Running production software is about stability, and "it works" is a legitimate reason to keep something running.</p>
+
+<p>If you are <em>evaluating</em> OpenHIM for a new deployment, or facing a major OpenHIM upgrade, or building a new national HIE component from scratch — yes, evaluate JamGateway seriously. The operational simplicity case is strong. The SMART on FHIR case is even stronger if your roadmap includes third-party clinical app access. The BALP case matters if your country has IHE compliance requirements for FHIR-era audit infrastructure.</p>
+
+<p>The honest summary: JamGateway is not more capable because it is cleverer. It is simpler because it was built ten years later, using frameworks that absorbed a decade of hard-won lessons about enterprise Java, health interoperability, and the operational realities of running critical infrastructure with small teams. OpenHIM built those lessons itself. JamGateway just started with them already in the box.</p>
+
+<p>The code is at GitHub, Apache-licensed, 43 Java files, 5,872 lines. The mediator protocol is fully compatible — if you run OpenHIM today, your mediators will register with JamGateway without a code change. The upgrade path is a configuration change, not a rewrite.</p>
+
+<p>And the client registry is coming next. But that is a separate blog post.</p>
+
+<hr class="section-divider"/>
+
+<!-- ── Post tags ── -->
+<div class="post-tags">
+  <a href="#">OpenHIM</a>
+  <a href="#">OpenHIM alternative</a>
+  <a href="#">Health information exchange</a>
+  <a href="#">FHIR gateway</a>
+  <a href="#">SMART on FHIR</a>
+  <a href="#">IHE ATNA</a>
+  <a href="#">IHE BALP</a>
+  <a href="#">HL7v2</a>
+  <a href="#">Apache Camel</a>
+  <a href="#">HAPI FHIR</a>
+  <a href="#">Spring Boot</a>
+  <a href="#">HIE architecture</a>
+  <a href="#">OpenHIE</a>
+  <a href="#">JamGateway</a>
+  <a href="#">Patient registry</a>
+  <a href="#">Master patient index</a>
+</div>
+
+<!-- ── Author box ── -->
+<div class="author-box">
+  <div class="author-avatar">👨‍💻</div>
+  <div class="author-info">
+    <div class="author-name">Akhil Ester</div>
+    <div class="author-title">Architect · blog.akhester.com</div>
+    <div class="author-bio">
+      Working at the intersection of enterprise Java, health interoperability standards, and national-scale digital infrastructure.
+      Interested in IHE profiles, FHIR R4, and building things that work reliably when someone's life depends on them.
+      Opinions are my own.
+    </div>
+  </div>
+</div>
+
+</article>
+</body>
+</html>

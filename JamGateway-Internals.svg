@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320">
+<style>text{font-family:-apple-system,"Helvetica Neue",Helvetica,sans-serif}</style>
+<rect width="760" height="320" fill="#F8FAFC" rx="8"/>
+<text x="380" y="26" text-anchor="middle" font-size="13" font-weight="800" fill="#0D1F33">Inside jam-gateway.jar — What lives in each layer</text>
+<text x="380" y="42" text-anchor="middle" font-size="9.5" fill="#5A8AA8">5,872 lines · 43 Java files · zero IPF dependency · no npm · no MongoDB</text>
+<rect x="30" y="54" width="700" height="248" rx="10" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="2"/>
+<text x="44" y="72" font-size="11" font-weight="800" fill="#0A5E54">jam-gateway.jar  (Spring Boot fat JAR — one command to run)</text>
+<rect x="44" y="72" width="156" height="220" rx="5" fill="#DDEEFF" stroke="#1B4F8A" stroke-width="0.8"/>
+<text x="122" y="88" text-anchor="middle" font-size="9" font-weight="800" fill="#133A6A">Security Layer</text>
+<line x1="50" y1="94" x2="194" y2="94" stroke="#1B4F8A" stroke-width="0.4"/>
+<text x="51" y="108" font-size="8.5" font-weight="600" fill="#133A6A">Spring Security OAuth2</text>
+<text x="51" y="119" font-size="7" fill="#94A3B8">.java</text>
+<text x="51" y="138" font-size="8.5" font-weight="600" fill="#133A6A">JWT Bearer validation</text>
+<text x="51" y="149" font-size="7" fill="#94A3B8">.java</text>
+<text x="51" y="168" font-size="8.5" font-weight="600" fill="#133A6A">SMART scope enforcer</text>
+<text x="51" y="179" font-size="7" fill="#94A3B8">.java</text>
+<text x="51" y="198" font-size="8.5" font-weight="600" fill="#133A6A">SmartConfigController</text>
+<text x="51" y="209" font-size="7" fill="#94A3B8">.java</text>
+<text x="51" y="228" font-size="8.5" font-weight="600" fill="#133A6A">mTLS + Basic auth</text>
+<text x="51" y="239" font-size="7" fill="#94A3B8">.java</text>
+<text x="51" y="258" font-size="8.5" font-weight="600" fill="#133A6A">CertMgmtService</text>
+<text x="51" y="269" font-size="7" fill="#94A3B8">.java</text>
+<rect x="208" y="72" width="156" height="220" rx="5" fill="#D8F0EC" stroke="#0D7A6E" stroke-width="0.8"/>
+<text x="286" y="88" text-anchor="middle" font-size="9" font-weight="800" fill="#0A5E54">Routing Layer</text>
+<line x1="214" y1="94" x2="358" y2="94" stroke="#0D7A6E" stroke-width="0.4"/>
+<text x="215" y="108" font-size="8.5" font-weight="600" fill="#0A5E54">Apache Camel 4 routes</text>
+<text x="215" y="119" font-size="7" fill="#94A3B8">.java</text>
+<text x="215" y="138" font-size="8.5" font-weight="600" fill="#0A5E54">FhirGatewayRoute</text>
+<text x="215" y="149" font-size="7" fill="#94A3B8">.java</text>
+<text x="215" y="168" font-size="8.5" font-weight="600" fill="#0A5E54">Hl7v2MllpBridgeRoute</text>
+<text x="215" y="179" font-size="7" fill="#94A3B8">.java</text>
+<text x="215" y="198" font-size="8.5" font-weight="600" fill="#0A5E54">ChannelRegistry</text>
+<text x="215" y="209" font-size="7" fill="#94A3B8">.java</text>
+<text x="215" y="228" font-size="8.5" font-weight="600" fill="#0A5E54">ChannelFanOut</text>
+<text x="215" y="239" font-size="7" fill="#94A3B8">.java</text>
+<text x="215" y="258" font-size="8.5" font-weight="600" fill="#0A5E54">RateLimitStore</text>
+<text x="215" y="269" font-size="7" fill="#94A3B8">.java</text>
+<rect x="372" y="72" width="156" height="220" rx="5" fill="#FFF7ED" stroke="#D97706" stroke-width="0.8"/>
+<text x="450" y="88" text-anchor="middle" font-size="9" font-weight="800" fill="#92400E">Audit Layer</text>
+<line x1="378" y1="94" x2="522" y2="94" stroke="#D97706" stroke-width="0.4"/>
+<text x="379" y="108" font-size="8.5" font-weight="600" fill="#92400E">AtnaService (RFC 5425)</text>
+<text x="379" y="119" font-size="7" fill="#94A3B8">.java</text>
+<text x="379" y="138" font-size="8.5" font-weight="600" fill="#92400E">IheAuditBuilder</text>
+<text x="379" y="149" font-size="7" fill="#94A3B8">.java</text>
+<text x="379" y="168" font-size="8.5" font-weight="600" fill="#92400E">AtnaRfc5425Sender</text>
+<text x="379" y="179" font-size="7" fill="#94A3B8">.java</text>
+<text x="379" y="198" font-size="8.5" font-weight="600" fill="#92400E">BalpAuditEventMapper</text>
+<text x="379" y="209" font-size="7" fill="#94A3B8">.java</text>
+<text x="379" y="228" font-size="8.5" font-weight="600" fill="#92400E">BalpSender (FHIR POST)</text>
+<text x="379" y="239" font-size="7" fill="#94A3B8">.java</text>
+<text x="379" y="258" font-size="8.5" font-weight="600" fill="#92400E">AlertService</text>
+<text x="379" y="269" font-size="7" fill="#94A3B8">.java</text>
+<rect x="536" y="72" width="178" height="220" rx="5" fill="#F0F9FF" stroke="#0369A1" stroke-width="0.8"/>
+<text x="625" y="88" text-anchor="middle" font-size="9" font-weight="800" fill="#075985">Admin Layer</text>
+<line x1="542" y1="94" x2="708" y2="94" stroke="#0369A1" stroke-width="0.4"/>
+<text x="543" y="108" font-size="8.5" font-weight="600" fill="#075985">9 Thymeleaf screens</text>
+<text x="543" y="119" font-size="7" fill="#94A3B8">.java</text>
+<text x="543" y="138" font-size="8.5" font-weight="600" fill="#075985">AdminChannelController</text>
+<text x="543" y="149" font-size="7" fill="#94A3B8">.java</text>
+<text x="543" y="168" font-size="8.5" font-weight="600" fill="#075985">AdminTransactionController</text>
+<text x="543" y="179" font-size="7" fill="#94A3B8">.java</text>
+<text x="543" y="198" font-size="8.5" font-weight="600" fill="#075985">ConfigExportController</text>
+<text x="543" y="209" font-size="7" fill="#94A3B8">.java</text>
+<text x="543" y="228" font-size="8.5" font-weight="600" fill="#075985">TransactionLogProcessor</text>
+<text x="543" y="239" font-size="7" fill="#94A3B8">.java</text>
+<text x="543" y="258" font-size="8.5" font-weight="600" fill="#075985">AdminAuditController</text>
+<text x="543" y="269" font-size="7" fill="#94A3B8">.java</text>
+<text x="380" y="320" text-anchor="middle" font-size="9" fill="#64748B">↕  PostgreSQL (Spring Data JPA)  ·  Redis optional (rate limiting + sessions)  ·  H2 in-memory for tests (no Postgres needed for mvn test)</text>
+</svg>

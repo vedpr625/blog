@@ -222,7 +222,7 @@ footer nav a:hover{color:var(--teal)}
 <p>The problem is that era is now over a decade old, and the accumulation of decisions made in that context shows in the codebase. Not as a failure — as a natural consequence of software aging in a world that moves forward.</p>
 
 <div class="diagram-wrap">
-  <img src="JamGateway-OpenhimPain.svg" alt="OpenHIM deployment reality diagram showing what you actually end up running vs what the README describes" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
+  <img src="/JamGateway-OpenhimPain.svg" alt="OpenHIM deployment reality diagram showing what you actually end up running vs what the README describes" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
   <div class="diagram-caption">What the README says vs what you actually end up running at 3am — the OpenHIM deployment reality most production teams know well.</div>
 </div>
 
@@ -255,7 +255,7 @@ footer nav a:hover{color:var(--teal)}
 <p>What it isn't: a general-purpose API gateway. JamGateway is specifically built for the health interoperability domain. It knows about FHIR resources, IHE transactions, HL7v2 messages, SMART on FHIR scopes, and OpenHIM mediators. It is not trying to compete with Kong or Tyk for generic HTTP routing at 10,000 RPS.</p>
 
 <div class="diagram-wrap">
-  <img src="JamGateway-Page1.svg" alt="JamGateway single JAR replacing five OpenHIM services — module mapping diagram" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
+  <img src="/JamGateway-Page1.svg" alt="JamGateway single JAR replacing five OpenHIM services — module mapping diagram" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
   <div class="diagram-caption">One JAR vs five OpenHIM services — every OpenHIM module mapped to its JamGateway equivalent class.</div>
 </div>
 
@@ -399,7 +399,7 @@ footer nav a:hover{color:var(--teal)}
 <p>Understanding what lives inside the JAR is important if you are evaluating this for production use. A fat Spring Boot JAR can be a black box if you do not understand its internal organisation. JamGateway's 43 Java files are organised into four clearly separated layers:</p>
 
 <div class="diagram-wrap">
-  <img src="JamGateway-Internals.svg" alt="JamGateway internal architecture — four layers: security, routing, audit, and admin" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
+  <img src="/JamGateway-Internals.svg" alt="JamGateway internal architecture — four layers: security, routing, audit, and admin" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
   <div class="diagram-caption">Inside jam-gateway.jar — four layers with clear separation of concerns. Each layer communicates downward, never sideways.</div>
 </div>
 
@@ -444,7 +444,7 @@ footer nav a:hover{color:var(--teal)}
 <p>The gateway is the entry point to a health information exchange — the routing and security layer. But it is one of six components that a complete national HIE needs. Here is the honest picture of where this sits in the larger architecture, and what needs to be built or connected next.</p>
 
 <div class="diagram-wrap">
-  <img src="JamGateway-HIE-Roadmap.svg" alt="National HIE component roadmap showing JamGateway as Phase 1, with Client Registry, Facility Registry, and Shared Health Record as subsequent phases" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
+  <img src="/JamGateway-HIE-Roadmap.svg" alt="National HIE component roadmap showing JamGateway as Phase 1, with Client Registry, Facility Registry, and Shared Health Record as subsequent phases" loading="lazy" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid #DDE8F0;"/>
   <div class="diagram-caption">The OpenHIE architecture roadmap — where JamGateway fits and what comes next. The Client Registry is the most critical missing piece.</div>
 </div>
 

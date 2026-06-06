@@ -1,276 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="490" viewBox="0 0 760 490">
 <defs>
-<style>
-text { font-family: -apple-system, "Inter", "Helvetica Neue", Helvetica, sans-serif; }
-</style>
-<marker id="ah_0D7A6E" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#0D7A6E"/>
-    </marker>
-<marker id="ah_2E6AAA" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#2E6AAA"/>
-    </marker>
-<marker id="ah_F5BDBD" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#F5BDBD"/>
-    </marker>
-<marker id="ah_F0D28A" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#F0D28A"/>
-    </marker>
-<marker id="ah_CDD8E0" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#CDD8E0"/>
-    </marker>
+  <marker id="arr_jar" viewBox="0 0 10 10" refX="9" refY="5"
+    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1,1.5 L8.5,5 L1,8.5 Z" fill="#0C7A6E"/>
+  </marker>
 </defs>
-<rect x="0" y="0" width="794" height="110" rx="0" fill="#0D2B4E"/>
-<circle cx="52" cy="55" r="22" fill="#1A9E90"/>
-<line x1="38" y1="46" x2="57" y2="55" stroke="#80C4C0" stroke-width="2" stroke-linecap="round"/>
-<line x1="38" y1="64" x2="57" y2="55" stroke="#80C4C0" stroke-width="2" stroke-linecap="round"/>
-<circle cx="63" cy="55" r="7" fill="#FFFFFF"/>
-<text x="84" y="46" fill="#FFFFFF" font-size="28" font-weight="800" letter-spacing="-0.5">JamGateway</text>
-<text x="84" y="68" fill="#8EC8E8" font-size="12" font-weight="400">Enterprise Java · Health Interoperability Gateway</text>
-<text x="84" y="86" fill="#5A9AB8" font-size="9.5">Spring Boot 3.3  ·  Apache Camel 4.8  ·  HAPI FHIR 7.4  ·  Java 17  ·  Apache 2.0</text>
-<text x="766" y="42" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="end">~99% OpenHIM parity</text>
-<text x="766" y="60" fill="#1A9E90" font-size="10" font-weight="600" text-anchor="end">1 JAR  ·  43 Java files  ·  5,872 lines of code</text>
-<text x="766" y="76" fill="#5A9AB8" font-size="9" text-anchor="end">26 tests  ·  Apache License 2.0  ·  OpenHIM mediator protocol compatible</text>
-<rect x="500" y="90" width="266" height="16" rx="4" fill="#0A3A60" stroke="#1A9E90" stroke-width="0.8"/>
-<text x="633" y="102" fill="#1A9E90" font-size="8.5" font-weight="600" text-anchor="middle">OpenHIM mediator protocol · FULLY compatible</text>
-<rect x="0" y="110" width="794" height="36" rx="0" fill="#E8F2FC"/>
-<line x1="0" y1="110" x2="794" y2="110" stroke="#C8DCF0" stroke-width="0.8"/>
-<line x1="0" y1="146" x2="794" y2="146" stroke="#C8DCF0" stroke-width="0.8"/>
-<text x="397" y="132" fill="#0D2B4E" font-size="12" font-weight="800" text-anchor="middle">ONE JAR replaces FIVE OpenHIM services — every capability mapped</text>
-<rect x="28" y="154" width="275" height="410" rx="6" fill="#FEF7F7" stroke="#F5BDBD" stroke-width="0.8"/>
-<rect x="323" y="154" width="148" height="410" rx="6" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="1.5"/>
-<rect x="491" y="154" width="275" height="410" rx="6" fill="#F2F7FF" stroke="#AACCEE" stroke-width="0.8"/>
-<text x="165" y="170" fill="#9B1C1C" font-size="9" font-weight="700" text-anchor="middle">OPENHIM — 5 services</text>
-<text x="397" y="170" fill="#0A5E54" font-size="9" font-weight="700" text-anchor="middle">JAMGATEWAY JAR</text>
-<text x="628" y="170" fill="#1B4F8A" font-size="9" font-weight="700" text-anchor="middle">CAPABILITIES INSIDE JAR</text>
-<line x1="34" y1="178" x2="297" y2="178" stroke="#F5BDBD" stroke-width="0.5"/>
-<line x1="329" y1="178" x2="465" y2="178" stroke="#8DD0C8" stroke-width="0.5"/>
-<line x1="497" y1="178" x2="760" y2="178" stroke="#AACCEE" stroke-width="0.5"/>
-<rect x="32" y="185" width="267" height="68" rx="4" fill="#FEF5F5" stroke="#F5BDBD" stroke-width="0.6"/>
-<rect x="37" y="190" width="32.0" height="14" rx="3" fill="#F5BDBD"/>
-<text x="53.0" y="199" fill="#9B1C1C" font-size="7.5" font-weight="700" text-anchor="middle">CORE</text>
-<text x="38" y="214" fill="#9B1C1C" font-size="9" font-weight="700">openhim-core-js</text>
-<text x="38" y="228" fill="#3A5A78" font-size="8.5">Channel routing, tx log,</text>
-<text x="38" y="240" fill="#3A5A78" font-size="8.5">rate limit, mediator API</text>
-<rect x="327" y="185" width="140" height="68" rx="4" fill="#EEF8F6" stroke="#8DD0C8" stroke-width="0.8"/>
-<text x="333" y="204" fill="#0A5E54" font-size="9" font-weight="700">FhirGatewayRoute</text>
-<text x="333" y="218" fill="#0D7A6E" font-size="8.5" font-weight="600">ChannelRegistry</text>
-<text x="333" y="232" fill="#3A5A78" font-size="7.5">Hot-reload routing · fan-out ·</text>
-<text x="333" y="243" fill="#3A5A78" font-size="7.5"> rate limit · tx log</text>
-<rect x="495" y="185" width="267" height="68" rx="4" fill="#F2F7FF" stroke="#AACCEE" stroke-width="0.7"/>
-<text x="501" y="204" fill="#1B4F8A" font-size="9" font-weight="700">ChannelRegistry + Camel routes</text>
-<text x="501" y="218" fill="#3A5A78" font-size="8.5">Hot-reload, fan-out, rate limit, body storage</text>
-<line x1="301" y1="219" x2="313" y2="219" stroke="#F5BDBD" stroke-width="1.4"/>
-<line x1="313" y1="219" x2="325" y2="219" stroke="#0D7A6E" stroke-width="1.4" marker-end="url(#ah_0D7A6E)"/>
-<line x1="469" y1="219" x2="493" y2="219" stroke="#2E6AAA" stroke-width="1.4" marker-end="url(#ah_2E6AAA)"/>
-<rect x="32" y="260" width="267" height="68" rx="4" fill="#FEF5F5" stroke="#F5BDBD" stroke-width="0.6"/>
-<rect x="37" y="265" width="54.0" height="14" rx="3" fill="#F5BDBD"/>
-<text x="64.0" y="274" fill="#9B1C1C" font-size="7.5" font-weight="700" text-anchor="middle">ADMIN UI</text>
-<text x="38" y="289" fill="#9B1C1C" font-size="9" font-weight="700">openhim-console</text>
-<text x="38" y="303" fill="#3A5A78" font-size="8.5">Angular SPA admin UI,</text>
-<text x="38" y="315" fill="#3A5A78" font-size="8.5">channels, monitoring</text>
-<rect x="327" y="260" width="140" height="68" rx="4" fill="#EEF8F6" stroke="#8DD0C8" stroke-width="0.8"/>
-<text x="333" y="279" fill="#0A5E54" font-size="9" font-weight="700">9 Thymeleaf+HTMX</text>
-<text x="333" y="293" fill="#0D7A6E" font-size="8.5" font-weight="600">screens in same JAR</text>
-<text x="333" y="307" fill="#3A5A78" font-size="7.5">No npm, no Angular build, no s</text>
-<text x="333" y="318" fill="#3A5A78" font-size="7.5">eparate deploy</text>
-<rect x="495" y="260" width="267" height="68" rx="4" fill="#F2F7FF" stroke="#AACCEE" stroke-width="0.7"/>
-<text x="501" y="279" fill="#1B4F8A" font-size="9" font-weight="700">AdminChannelController + 8 more</text>
-<text x="501" y="293" fill="#3A5A78" font-size="8.5">No npm, no build step, CSRF via Spring</text>
-<line x1="301" y1="294" x2="313" y2="294" stroke="#F5BDBD" stroke-width="1.4"/>
-<line x1="313" y1="294" x2="325" y2="294" stroke="#0D7A6E" stroke-width="1.4" marker-end="url(#ah_0D7A6E)"/>
-<line x1="469" y1="294" x2="493" y2="294" stroke="#2E6AAA" stroke-width="1.4" marker-end="url(#ah_2E6AAA)"/>
-<rect x="32" y="335" width="267" height="68" rx="4" fill="#FFFBF0" stroke="#F0D28A" stroke-width="0.6"/>
-<rect x="37" y="340" width="37.5" height="14" rx="3" fill="#F0D28A"/>
-<text x="55.0" y="349" fill="#78400A" font-size="7.5" font-weight="700" text-anchor="middle">HL7v2</text>
-<text x="38" y="364" fill="#78400A" font-size="9" font-weight="700">mapping-mediator</text>
-<text x="38" y="378" fill="#3A5A78" font-size="8.5">HL7v2→FHIR, no-code rules,</text>
-<text x="38" y="390" fill="#3A5A78" font-size="8.5">Node.js + MongoDB cluster</text>
-<rect x="327" y="335" width="140" height="68" rx="4" fill="#EEF8F6" stroke="#8DD0C8" stroke-width="0.8"/>
-<text x="333" y="354" fill="#0A5E54" font-size="9" font-weight="700">Hl7v2ToFhirMapper</text>
-<text x="333" y="368" fill="#0D7A6E" font-size="8.5" font-weight="600">Hl7v2MllpBridgeRoute</text>
-<text x="333" y="382" fill="#3A5A78" font-size="7.5">ADT A04/A08/A40 + ORU R01 → FH</text>
-<text x="333" y="393" fill="#3A5A78" font-size="7.5">IR R4 native</text>
-<rect x="495" y="335" width="267" height="68" rx="4" fill="#F2F7FF" stroke="#AACCEE" stroke-width="0.7"/>
-<text x="501" y="354" fill="#1B4F8A" font-size="9" font-weight="700">camel-mllp + HAPI HL7v2 2.6</text>
-<text x="501" y="368" fill="#3A5A78" font-size="8.5">Native — no extra service or database</text>
-<line x1="301" y1="369" x2="313" y2="369" stroke="#F0D28A" stroke-width="1.4"/>
-<line x1="313" y1="369" x2="325" y2="369" stroke="#0D7A6E" stroke-width="1.4" marker-end="url(#ah_0D7A6E)"/>
-<line x1="469" y1="369" x2="493" y2="369" stroke="#2E6AAA" stroke-width="1.4" marker-end="url(#ah_2E6AAA)"/>
-<rect x="32" y="410" width="267" height="68" rx="4" fill="#FFFBF0" stroke="#F0D28A" stroke-width="0.6"/>
-<rect x="37" y="415" width="32.0" height="14" rx="3" fill="#F0D28A"/>
-<text x="53.0" y="424" fill="#78400A" font-size="7.5" font-weight="700" text-anchor="middle">FHIR</text>
-<text x="38" y="439" fill="#78400A" font-size="9" font-weight="700">fhir-proxy-mediator</text>
-<text x="38" y="453" fill="#3A5A78" font-size="8.5">FHIR XML↔JSON conversion,</text>
-<text x="38" y="465" fill="#3A5A78" font-size="8.5">IHE PDQm / MHD / PIXm</text>
-<rect x="327" y="410" width="140" height="68" rx="4" fill="#EEF8F6" stroke="#8DD0C8" stroke-width="0.8"/>
-<text x="333" y="429" fill="#0A5E54" font-size="9" font-weight="700">FhirClientService</text>
-<text x="333" y="443" fill="#0D7A6E" font-size="8.5" font-weight="600">HAPI FHIR R4 client</text>
-<text x="333" y="457" fill="#3A5A78" font-size="7.5">PDQm · MHD · PIXm · XML↔JSON n</text>
-<text x="333" y="468" fill="#3A5A78" font-size="7.5">ative · SMART</text>
-<rect x="495" y="410" width="267" height="68" rx="4" fill="#F0EBFF" stroke="#9B6FD4" stroke-width="0.7"/>
-<text x="501" y="429" fill="#5B21B6" font-size="9" font-weight="700">★ JWT + SMART on FHIR built-in</text>
-<text x="501" y="443" fill="#3A5A78" font-size="8.5">OpenHIM has zero JWT/SMART support</text>
-<text x="501" y="458" fill="#5B21B6" font-size="8" font-weight="600">★ Ahead of OpenHIM</text>
-<line x1="301" y1="444" x2="313" y2="444" stroke="#F0D28A" stroke-width="1.4"/>
-<line x1="313" y1="444" x2="325" y2="444" stroke="#0D7A6E" stroke-width="1.4" marker-end="url(#ah_0D7A6E)"/>
-<line x1="469" y1="444" x2="493" y2="444" stroke="#2E6AAA" stroke-width="1.4" marker-end="url(#ah_2E6AAA)"/>
-<rect x="32" y="485" width="267" height="68" rx="4" fill="#F8FAFB" stroke="#CDD8E0" stroke-width="0.6"/>
-<rect x="37" y="490" width="37.5" height="14" rx="3" fill="#CDD8E0"/>
-<text x="55.0" y="499" fill="#4A6070" font-size="7.5" font-weight="700" text-anchor="middle">AUDIT</text>
-<text x="38" y="514" fill="#4A6070" font-size="9" font-weight="700">custom audit mediator</text>
-<text x="38" y="528" fill="#3A5A78" font-size="8.5">IHE ATNA syslog, FHIR audit,</text>
-<text x="38" y="540" fill="#3A5A78" font-size="8.5">hand-coded per deployment</text>
-<rect x="327" y="485" width="140" height="68" rx="4" fill="#EEF8F6" stroke="#8DD0C8" stroke-width="0.8"/>
-<text x="333" y="504" fill="#0A5E54" font-size="9" font-weight="700">AtnaService · BALP</text>
-<text x="333" y="518" fill="#0D7A6E" font-size="8.5" font-weight="600">AlertService</text>
-<text x="333" y="532" fill="#3A5A78" font-size="7.5">TLS syslog + DB + FHIR AuditEv</text>
-<text x="333" y="543" fill="#3A5A78" font-size="7.5">ent + email/SMS</text>
-<rect x="495" y="485" width="267" height="68" rx="4" fill="#F0EBFF" stroke="#9B6FD4" stroke-width="0.7"/>
-<text x="501" y="504" fill="#5B21B6" font-size="9" font-weight="700">★ IHE BALP FHIR AuditEvent</text>
-<text x="501" y="518" fill="#3A5A78" font-size="8.5">OpenHIM has no FHIR R4 audit at all</text>
-<text x="501" y="533" fill="#5B21B6" font-size="8" font-weight="600">★ Ahead of OpenHIM</text>
-<line x1="301" y1="519" x2="313" y2="519" stroke="#CDD8E0" stroke-width="1.4"/>
-<line x1="313" y1="519" x2="325" y2="519" stroke="#0D7A6E" stroke-width="1.4" marker-end="url(#ah_0D7A6E)"/>
-<line x1="469" y1="519" x2="493" y2="519" stroke="#2E6AAA" stroke-width="1.4" marker-end="url(#ah_2E6AAA)"/>
-<rect x="0" y="574" width="794" height="44" rx="0" fill="#0D2B4E"/>
-<text x="144.55999999999997" y="597" fill="#DC2626" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">5</text>
-<text x="144.55999999999997" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">OpenHIM services</text>
-<text x="191.39999999999998" y="600" fill="#4A7A9A" font-size="11" text-anchor="middle">→</text>
-<text x="233.76" y="597" fill="#1A9E90" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">1</text>
-<text x="233.76" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">JamGateway JAR</text>
-<line x1="274.12" y1="581" x2="274.12" y2="611" stroke="#2A4A6A" stroke-width="0.8"/>
-<text x="312.24" y="597" fill="#F59E0B" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">~18K</text>
-<text x="312.24" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">OpenHIM lines</text>
-<text x="352.36" y="600" fill="#4A7A9A" font-size="11" text-anchor="middle">→</text>
-<text x="399.20000000000005" y="597" fill="#1A9E90" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">5,872</text>
-<text x="399.20000000000005" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">JamGateway lines</text>
-<line x1="444.04" y1="581" x2="444.04" y2="611" stroke="#2A4A6A" stroke-width="0.8"/>
-<text x="477.68" y="597" fill="#DC2626" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">2</text>
-<text x="477.68" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">OpenHIM DBs</text>
-<text x="513.32" y="600" fill="#4A7A9A" font-size="11" text-anchor="middle">→</text>
-<text x="546.72" y="597" fill="#1A9E90" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">1</text>
-<text x="546.72" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">PostgreSQL</text>
-<line x1="578.12" y1="581" x2="578.12" y2="611" stroke="#2A4A6A" stroke-width="0.8"/>
-<text x="607.28" y="597" fill="#DC2626" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">5</text>
-<text x="607.28" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">log files</text>
-<text x="638.44" y="600" fill="#4A7A9A" font-size="11" text-anchor="middle">→</text>
-<text x="667.36" y="597" fill="#1A9E90" font-size="16" font-weight="800" text-anchor="middle" dominant-baseline="middle">1</text>
-<text x="667.36" y="610" fill="#7AAEC8" font-size="7.5" text-anchor="middle">log file</text>
-<text x="28" y="624" fill="#0D2B4E" font-size="9.5" font-weight="700">Module-by-module mapping — what each OpenHIM service became inside JamGateway</text>
-<line x1="28" y1="628" x2="766" y2="628" stroke="#1B4F8A" stroke-width="0.8"/>
-<rect x="28" y="632" width="130" height="22" rx="0" fill="#1B4F8A"/>
-<text x="93" y="647" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle">OpenHIM module</text>
-<rect x="158" y="632" width="150" height="22" rx="0" fill="#1B4F8A"/>
-<text x="233" y="647" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle">What it provided</text>
-<rect x="308" y="632" width="180" height="22" rx="0" fill="#0A5E54"/>
-<text x="398" y="647" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle">JamGateway class</text>
-<rect x="488" y="632" width="278" height="22" rx="0" fill="#0D2B4E"/>
-<text x="627" y="647" fill="#FFFFFF" font-size="8.5" font-weight="700" text-anchor="middle">Advantage</text>
-<rect x="28" y="654" width="738" height="60" rx="0" fill="#F6FAFF"/>
-<line x1="28" y1="714" x2="766" y2="714" stroke="#DDE8F5" stroke-width="0.3"/>
-<rect x="29" y="656" width="128" height="56" rx="3" fill="#FEF5F5"/>
-<text x="34" y="670" fill="#9B1C1C" font-size="8.5" font-weight="700">openhim-core-js</text>
-<text x="163" y="670" fill="#3A5A78" font-size="8">Channel routing</text>
-<text x="163" y="683" fill="#3A5A78" font-size="8">tx log, rate limit</text>
-<text x="163" y="696" fill="#3A5A78" font-size="8">mediator API, ATNA</text>
-<text x="313" y="670" fill="#0A5E54" font-size="8" font-weight="700">FhirGatewayRoute</text>
-<text x="313" y="683" fill="#0A5E54" font-size="8" font-weight="700">ChannelRegistry</text>
-<text x="313" y="696" fill="#0A5E54" font-size="8" font-weight="700">TransactionLogProcessor</text>
-<text x="313" y="709" fill="#0A5E54" font-size="8" font-weight="700">AtnaService · AlertService</text>
-<text x="493" y="670" fill="#3A5A78" font-size="8" font-weight="400">Java JVM beats Node.js</text>
-<text x="493" y="683" fill="#3A5A78" font-size="8" font-weight="400">Postgres vs MongoDB</text>
-<text x="493" y="696" fill="#3A5A78" font-size="8" font-weight="400">Owned IHE code, no IPF</text>
-<text x="493" y="709" fill="#3A5A78" font-size="8" font-weight="400">Email + Twilio SMS built-in</text>
-<rect x="28" y="714" width="738" height="60" rx="0" fill="#FFFFFF"/>
-<line x1="28" y1="774" x2="766" y2="774" stroke="#DDE8F5" stroke-width="0.3"/>
-<rect x="29" y="716" width="128" height="56" rx="3" fill="#FEF5F5"/>
-<text x="34" y="730" fill="#9B1C1C" font-size="8.5" font-weight="700">openhim-console</text>
-<text x="163" y="730" fill="#3A5A78" font-size="8">Angular SPA admin UI</text>
-<text x="163" y="743" fill="#3A5A78" font-size="8">channels, tx viewer</text>
-<text x="163" y="756" fill="#3A5A78" font-size="8">status, cert mgmt</text>
-<text x="313" y="730" fill="#0A5E54" font-size="8" font-weight="700">9 Thymeleaf + HTMX screens</text>
-<text x="313" y="743" fill="#0A5E54" font-size="8" font-weight="700">AdminChannelController</text>
-<text x="313" y="756" fill="#0A5E54" font-size="8" font-weight="700">AdminTransactionController</text>
-<text x="313" y="769" fill="#0A5E54" font-size="8" font-weight="700">ConfigExportController</text>
-<text x="493" y="730" fill="#3A5A78" font-size="8" font-weight="400">No npm, no build step</text>
-<text x="493" y="743" fill="#3A5A78" font-size="8" font-weight="400">No separate server to deploy</text>
-<text x="493" y="756" fill="#3A5A78" font-size="8" font-weight="400">CSRF via Spring Security</text>
-<text x="493" y="769" fill="#3A5A78" font-size="8" font-weight="400">HTMX partials, same UX</text>
-<rect x="28" y="774" width="738" height="60" rx="0" fill="#F6FAFF"/>
-<line x1="28" y1="834" x2="766" y2="834" stroke="#DDE8F5" stroke-width="0.3"/>
-<rect x="29" y="776" width="128" height="56" rx="3" fill="#FFFBF0"/>
-<text x="34" y="790" fill="#78400A" font-size="8.5" font-weight="700">mapping-mediator</text>
-<text x="34" y="803" fill="#78400A" font-size="8.5" font-weight="700">(Node.js+MongoDB)</text>
-<text x="163" y="790" fill="#3A5A78" font-size="8">HL7v2 → FHIR mapping</text>
-<text x="163" y="803" fill="#3A5A78" font-size="8">no-code transform rules</text>
-<text x="163" y="816" fill="#3A5A78" font-size="8">requires Mongo replica set</text>
-<text x="313" y="790" fill="#0A5E54" font-size="8" font-weight="700">Hl7v2ToFhirMapper</text>
-<text x="313" y="803" fill="#0A5E54" font-size="8" font-weight="700">Hl7v2MllpBridgeRoute</text>
-<text x="313" y="816" fill="#0A5E54" font-size="8" font-weight="700">camel-mllp + HAPI HL7v2</text>
-<text x="313" y="829" fill="#0A5E54" font-size="8" font-weight="700">ADT A04/A08/A40, ORU R01</text>
-<text x="493" y="790" fill="#3A5A78" font-size="8" font-weight="400">Native in core, no extra service</text>
-<text x="493" y="803" fill="#3A5A78" font-size="8" font-weight="400">No MongoDB cluster needed</text>
-<text x="493" y="816" fill="#3A5A78" font-size="8" font-weight="400">ADT + ORU → FHIR R4 built-in</text>
-<text x="493" y="829" fill="#3A5A78" font-size="8" font-weight="400">Direct MLLP transport</text>
-<rect x="28" y="834" width="738" height="60" rx="0" fill="#FFFFFF"/>
-<line x1="28" y1="894" x2="766" y2="894" stroke="#DDE8F5" stroke-width="0.3"/>
-<rect x="29" y="836" width="128" height="56" rx="3" fill="#FFFBF0"/>
-<text x="34" y="850" fill="#78400A" font-size="8.5" font-weight="700">fhir-proxy-mediator</text>
-<text x="34" y="863" fill="#78400A" font-size="8.5" font-weight="700">(Java service)</text>
-<text x="163" y="850" fill="#3A5A78" font-size="8">FHIR XML↔JSON convert</text>
-<text x="163" y="863" fill="#3A5A78" font-size="8">IHE PDQm/MHD/PIXm</text>
-<text x="163" y="876" fill="#3A5A78" font-size="8">format validation</text>
-<text x="313" y="850" fill="#0A5E54" font-size="8" font-weight="700">FhirClientService</text>
-<text x="313" y="863" fill="#0A5E54" font-size="8" font-weight="700">SmartScopeEnforcer</text>
-<text x="313" y="876" fill="#0A5E54" font-size="8" font-weight="700">SmartConfigController</text>
-<text x="313" y="889" fill="#0A5E54" font-size="8" font-weight="700">HAPI FHIR R4 client</text>
-<text x="493" y="850" fill="#5B21B6" font-size="8" font-weight="700">★ JWT + SMART on FHIR native</text>
-<text x="493" y="863" fill="#5B21B6" font-size="8" font-weight="400">OpenHIM has zero SMART support</text>
-<text x="493" y="876" fill="#5B21B6" font-size="8" font-weight="400">HAPI FHIR handles XML↔JSON</text>
-<text x="493" y="889" fill="#5B21B6" font-size="8" font-weight="400">.well-known discovery endpoint</text>
-<rect x="28" y="894" width="738" height="60" rx="0" fill="#F6FAFF"/>
-<line x1="28" y1="954" x2="766" y2="954" stroke="#DDE8F5" stroke-width="0.3"/>
-<rect x="29" y="896" width="128" height="56" rx="3" fill="#F8FAFB"/>
-<text x="34" y="910" fill="#4A6070" font-size="8.5" font-weight="700">custom audit</text>
-<text x="34" y="923" fill="#4A6070" font-size="8.5" font-weight="700">mediator</text>
-<text x="163" y="910" fill="#3A5A78" font-size="8">IHE ATNA TLS syslog</text>
-<text x="163" y="923" fill="#3A5A78" font-size="8">FHIR AuditEvent</text>
-<text x="163" y="936" fill="#3A5A78" font-size="8">alerts — hand-coded</text>
-<text x="163" y="949" fill="#3A5A78" font-size="8">per deployment</text>
-<text x="313" y="910" fill="#0A5E54" font-size="8" font-weight="700">AtnaService (RFC 5425)</text>
-<text x="313" y="923" fill="#0A5E54" font-size="8" font-weight="700">BalpAuditEventMapper</text>
-<text x="313" y="936" fill="#0A5E54" font-size="8" font-weight="700">BalpSender (FHIR R4 POST)</text>
-<text x="313" y="949" fill="#0A5E54" font-size="8" font-weight="700">AlertService (email+SMS)</text>
-<text x="493" y="910" fill="#5B21B6" font-size="8" font-weight="700">★ IHE BALP FHIR AuditEvent</text>
-<text x="493" y="923" fill="#5B21B6" font-size="8" font-weight="400">OpenHIM has NO FHIR audit</text>
-<text x="493" y="936" fill="#5B21B6" font-size="8" font-weight="400">3 destinations in 1 class</text>
-<text x="493" y="949" fill="#5B21B6" font-size="8" font-weight="400">No custom code per deployment</text>
-<line x1="158" y1="632" x2="158" y2="954" stroke="#C8DCF0" stroke-width="0.5"/>
-<line x1="308" y1="632" x2="308" y2="954" stroke="#C8DCF0" stroke-width="0.5"/>
-<line x1="488" y1="632" x2="488" y2="954" stroke="#C8DCF0" stroke-width="0.5"/>
-<rect x="28" y="632" width="738" height="322" fill="none" stroke="#C8DCF0" stroke-width="0.7"/>
-<rect x="28" y="966" width="738" height="34" rx="5" fill="#E8F2FC" stroke="#C8DCF0" stroke-width="0.5"/>
-<rect x="34" y="970" width="80.6" height="26" rx="4" fill="#EAF7F5"/>
-<text x="38" y="988" fill="#0A5E54" font-size="11" font-weight="800" dominant-baseline="middle">3×</text>
-<text x="56" y="988" fill="#3A5A78" font-size="8" dominant-baseline="middle">less code</text>
-<rect x="119.6" y="970" width="95.2" height="26" rx="4" fill="#F4F9FF"/>
-<text x="123.6" y="988" fill="#1B4F8A" font-size="11" font-weight="800" dominant-baseline="middle">1</text>
-<text x="134.6" y="988" fill="#3A5A78" font-size="8" dominant-baseline="middle">JAR to deploy</text>
-<rect x="219.8" y="970" width="100.60000000000001" height="26" rx="4" fill="#EAF7F5"/>
-<text x="223.8" y="988" fill="#0A5E54" font-size="11" font-weight="800" dominant-baseline="middle">0</text>
-<text x="234.8" y="988" fill="#3A5A78" font-size="8" dominant-baseline="middle">extra services</text>
-<rect x="325.40000000000003" y="970" width="214.0" height="26" rx="4" fill="#F0EBFF"/>
-<text x="329.40000000000003" y="988" fill="#5B21B6" font-size="11" font-weight="800" dominant-baseline="middle">★</text>
-<text x="340.40000000000003" y="988" fill="#3A5A78" font-size="8" dominant-baseline="middle">JWT + SMART on FHIR (OpenHIM: none)</text>
-<rect x="544.4000000000001" y="970" width="214.0" height="26" rx="4" fill="#F0EBFF"/>
-<text x="548.4000000000001" y="988" fill="#5B21B6" font-size="11" font-weight="800" dominant-baseline="middle">★</text>
-<text x="559.4000000000001" y="988" fill="#3A5A78" font-size="8" dominant-baseline="middle">IHE BALP FHIR audit (OpenHIM: none)</text>
-<rect x="0" y="1095" width="794" height="28" rx="0" fill="#0D2B4E"/>
-<text x="28" y="1113" fill="#7AAEC8" font-size="8">github.com/your-org/jam-gateway  ·  Apache 2.0  ·  ~99% OpenHIM parity  ·  sole gap: mediator marketplace page</text>
-<text x="766" y="1113" fill="#1A9E90" font-size="8.5" font-weight="700" text-anchor="end">Page 1 of 2  →</text>
+<rect x="0" y="0" width="760" height="490" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
+<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">One JAR Replaces Five OpenHIM Services</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">Every OpenHIM module mapped to its JamGateway equivalent</text>
+<line x1="0" y1="56" x2="760" y2="56" stroke="#DDE8F0" stroke-width="1"/>
+<rect x="16" y="62" width="228" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
+<text x="130" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0D2B4E" letter-spacing="0.05em">OpenHIM Module</text>
+<rect x="252" y="62" width="116" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
+<text x="310" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JAR</text>
+<rect x="376" y="62" width="368" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
+<text x="560" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JamGateway Class + Capability</text>
+<rect x="16" y="88" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
+<line x1="16" y1="164" x2="744" y2="164" stroke="#DDE8F0" stroke-width="0.5"/>
+<rect x="16" y="88" width="228" height="76" rx="0" fill="#FEF2F2" stroke="none" stroke-width="1"/>
+<text x="24" y="106" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-core-js</text>
+<text x="24" y="121" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+MongoDB</text>
+<text x="310" y="131" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="104" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">FhirGatewayRoute</text>
+<text x="384" y="120" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ChannelRegistry</text>
+<text x="384" y="136" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">TransactionLogProcessor</text>
+<text x="384" y="150" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Hot-reload routing · fan-out · rate limit · tx log</text>
+<text x="384" y="160" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Java JVM · Postgres replaces MongoDB · owned IHE code</text>
+<rect x="16" y="164" width="728" height="76" rx="0" fill="#FFFFFF" stroke="#DDE8F0" stroke-width="0.4"/>
+<line x1="16" y1="240" x2="744" y2="240" stroke="#DDE8F0" stroke-width="0.5"/>
+<rect x="16" y="164" width="228" height="76" rx="0" fill="#FEF2F2" stroke="none" stroke-width="1"/>
+<text x="24" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-console</text>
+<text x="24" y="197" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA</text>
+<text x="310" y="207" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="180" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">9 Thymeleaf+HTMX</text>
+<text x="384" y="196" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">AdminChannelController</text>
+<text x="384" y="212" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ConfigExportController</text>
+<text x="384" y="226" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Admin UI · tx viewer · cert mgmt · config export</text>
+<text x="384" y="236" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">No npm · no build step · CSRF via Spring natively</text>
+<rect x="16" y="240" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
+<line x1="16" y1="316" x2="744" y2="316" stroke="#DDE8F0" stroke-width="0.5"/>
+<rect x="16" y="240" width="228" height="76" rx="0" fill="#FFFBEB" stroke="none" stroke-width="1"/>
+<text x="24" y="258" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">mapping-mediator</text>
+<text x="24" y="273" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+Mongo cluster</text>
+<text x="310" y="283" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="256" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2ToFhirMapper</text>
+<text x="384" y="272" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2MllpBridgeRoute</text>
+<text x="384" y="288" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">camel-mllp + HAPI HL7v2</text>
+<text x="384" y="302" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">ADT A04/A08/A40 + ORU R01 → FHIR R4</text>
+<text x="384" y="312" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Native in core · no MongoDB cluster needed</text>
+<rect x="16" y="316" width="728" height="76" rx="0" fill="#FFFFFF" stroke="#DDE8F0" stroke-width="0.4"/>
+<line x1="16" y1="392" x2="744" y2="392" stroke="#DDE8F0" stroke-width="0.5"/>
+<rect x="16" y="316" width="228" height="76" rx="0" fill="#FFFBEB" stroke="none" stroke-width="1"/>
+<text x="24" y="334" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">fhir-proxy-mediator</text>
+<text x="24" y="349" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Java service</text>
+<text x="310" y="359" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
+<text x="384" y="332" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">FhirClientService</text>
+<text x="384" y="348" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartScopeEnforcer</text>
+<text x="384" y="364" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartConfigController</text>
+<text x="384" y="378" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">PDQm · MHD · PIXm · JWT · SMART on FHIR</text>
+<text x="384" y="388" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ JWT+SMART native — OpenHIM has zero SMART</text>
+<rect x="16" y="392" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
+<line x1="16" y1="468" x2="744" y2="468" stroke="#DDE8F0" stroke-width="0.5"/>
+<rect x="16" y="392" width="228" height="76" rx="0" fill="#F8FAFC" stroke="none" stroke-width="1"/>
+<text x="24" y="410" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#94A3B8" letter-spacing="0">custom audit mediator</text>
+<text x="24" y="425" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">per-deployment</text>
+<text x="310" y="435" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
+<text x="384" y="408" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AtnaService (RFC 5425)</text>
+<text x="384" y="424" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">BalpAuditEventMapper</text>
+<text x="384" y="440" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AlertService</text>
+<text x="384" y="454" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">TLS syslog + DB + FHIR R4 AuditEvent + email/SMS</text>
+<text x="384" y="464" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ IHE BALP native — OpenHIM has no FHIR audit</text>
+<line x1="244" y1="62" x2="244" y2="468" stroke="#DDE8F0" stroke-width="0.8"/>
+<line x1="372" y1="62" x2="372" y2="468" stroke="#DDE8F0" stroke-width="0.8"/>
+<rect x="0" y="470" width="760" height="20" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
+<text x="80" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
+<text x="80" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
+<text x="200" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">2→1</text>
+<text x="200" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
+<text x="340" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">~18K→6K</text>
+<text x="340" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines</text>
+<text x="470" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
+<text x="470" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
+<text x="610" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ JWT+SMART</text>
+<text x="610" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">native</text>
+<text x="710" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ IHE BALP</text>
+<text x="710" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">FHIR audit</text>
 </svg>

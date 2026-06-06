@@ -1,64 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="410" viewBox="0 0 760 410">
 <defs>
-<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#94A3B8"/>
-    </marker>
-<marker id="arr_red" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#EF4444"/>
-    </marker>
-<marker id="arr_teal" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#0D7A6E"/>
-    </marker>
-<style>text{font-family:-apple-system,"Helvetica Neue",Helvetica,sans-serif}</style>
+  <marker id="arr_pain" viewBox="0 0 10 10" refX="9" refY="5"
+    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1,1.5 L8.5,5 L1,8.5 Z" fill="#EF4444"/>
+  </marker>
 </defs>
-<rect width="760" height="380" fill="#F8FAFC" rx="8"/>
-<text x="380" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#0D1F33">OpenHIM Deployment Reality — What the GitHub README Doesn't Tell You</text>
-<text x="380" y="44" text-anchor="middle" font-size="10" fill="#5A8AA8">What you think you're deploying vs what you actually end up running at 3am</text>
-<text x="190" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#9B1C1C">What the README says you need</text>
-<rect x="100" y="80" width="180" height="36" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
-<text x="190" y="103" text-anchor="middle" font-size="10" font-weight="700" fill="#991B1B">openhim-core-js</text>
-<text x="190" y="94" text-anchor="middle" font-size="8" fill="#B91C1C">npm install + docker-compose up</text>
-<text x="540" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#9B1C1C">What you actually end up running</text>
-<rect x="430" y="82" width="260" height="32" rx="4" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="0.8"/>
-<text x="438" y="95" font-size="9" font-weight="700" fill="#1E293B">openhim-core-js</text>
-<text x="438" y="107" font-size="8" fill="#64748B">Node.js 14 (EOL)</text>
-<rect x="430" y="124" width="260" height="32" rx="4" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="0.8"/>
-<text x="438" y="137" font-size="9" font-weight="700" fill="#1E293B">openhim-console</text>
-<text x="438" y="149" font-size="8" fill="#64748B">Angular 10 SPA</text>
-<rect x="430" y="166" width="260" height="32" rx="4" fill="#FFFBEB" stroke="#FCD34D" stroke-width="0.8"/>
-<text x="438" y="179" font-size="9" font-weight="700" fill="#1E293B">MongoDB 4.4</text>
-<text x="438" y="191" font-size="8" fill="#64748B">Primary + 2 replicas</text>
-<rect x="430" y="208" width="260" height="32" rx="4" fill="#FFFBEB" stroke="#FCD34D" stroke-width="0.8"/>
-<text x="438" y="221" font-size="9" font-weight="700" fill="#1E293B">mapping-mediator</text>
-<text x="438" y="233" font-size="8" fill="#64748B">Node.js + its own Mongo</text>
-<rect x="430" y="250" width="260" height="32" rx="4" fill="#FFFBEB" stroke="#FCD34D" stroke-width="0.8"/>
-<text x="438" y="263" font-size="9" font-weight="700" fill="#1E293B">fhir-proxy-mediator</text>
-<text x="438" y="275" font-size="8" fill="#64748B">Java 8 service</text>
-<rect x="430" y="292" width="260" height="32" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="0.8"/>
-<text x="438" y="305" font-size="9" font-weight="700" fill="#1E293B">your-hl7v2-mediator</text>
-<text x="438" y="317" font-size="8" fill="#64748B">custom Node.js</text>
-<rect x="430" y="334" width="260" height="32" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="0.8"/>
-<text x="438" y="347" font-size="9" font-weight="700" fill="#1E293B">nginx / reverse proxy</text>
-<text x="438" y="359" font-size="8" fill="#64748B">SSL termination</text>
-<line x1="280" y1="98" x2="420" y2="98" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arr_red)" stroke-dasharray="4,3"/>
-<text x="350" y="90" text-anchor="middle" font-size="8" fill="#EF4444" font-weight="600">reality check</text>
-<line x1="698" y1="84" x2="698" y2="360" stroke="#94A3B8" stroke-width="1"/>
-<line x1="698" y1="222" x2="708" y2="222" stroke="#94A3B8" stroke-width="1"/>
-<text x="712" y="218" font-size="9" fill="#64748B" font-weight="600">7 processes</text>
-<text x="712" y="230" font-size="9" fill="#64748B">to monitor</text>
-<text x="30" y="140" font-size="8" fill="#7C3AED">When MongoDB replica</text>
-<text x="30" y="153" font-size="8" fill="#7C3AED">set goes down at 2am,</text>
-<text x="30" y="166" font-size="8" fill="#7C3AED">everything stops.</text>
-<text x="30" y="210" font-size="8" fill="#7C3AED">Node.js 14 is EOL.</text>
-<text x="30" y="223" font-size="8" fill="#7C3AED">OpenHIM still ships</text>
-<text x="30" y="236" font-size="8" fill="#7C3AED">on it (2025).</text>
-<text x="30" y="280" font-size="8" fill="#7C3AED">Upgrading one service</text>
-<text x="30" y="293" font-size="8" fill="#7C3AED">breaks another.</text>
-<text x="30" y="306" font-size="8" fill="#7C3AED">Version matrix is a</text>
-<text x="30" y="319" font-size="8" fill="#7C3AED">maintenance nightmare.</text>
-<line x1="90" y1="200" x2="420" y2="190" stroke="#7C3AED" stroke-width="0.6" stroke-dasharray="3,3"/>
-<line x1="90" y1="270" x2="420" y2="270" stroke="#7C3AED" stroke-width="0.6" stroke-dasharray="3,3"/>
+<rect x="0" y="0" width="760" height="410" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
+<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">OpenHIM: README vs Reality</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">What you think you're deploying vs what runs at 3am</text>
+<line x1="0" y1="58" x2="760" y2="58" stroke="#DDE8F0" stroke-width="1"/>
+<text x="186" y="78" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What the README says</text>
+<rect x="86" y="90" width="200" height="56" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5"/>
+<text x="186" y="118" text-anchor="middle" font-family="JetBrains Mono","Fira Code",monospace font-size="12" font-weight="700" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
+<text x="186" y="134" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">npm install + docker compose up</text>
+<circle cx="186" cy="162" r="14" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
+<text x="186" y="167" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="700" fill="#16A34A" letter-spacing="0">✓</text>
+<text x="186" y="184" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">Simple?</text>
+<line x1="295" y1="120" x2="345" y2="120" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr_pain)"/>
+<text x="320" y="113" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#EF4444" letter-spacing="0">reality</text>
+<text x="548" y="78" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What you actually end up running</text>
+<rect x="360" y="87" width="340" height="32" rx="5" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.8"/>
+<text x="372" y="100" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
+<text x="372" y="113" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js 14 — EOL since 2023</text>
+<rect x="360" y="123" width="340" height="32" rx="5" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.8"/>
+<text x="372" y="136" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-console</text>
+<text x="372" y="149" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA — separate deploy</text>
+<rect x="360" y="159" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
+<text x="372" y="172" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">MongoDB replica set</text>
+<text x="372" y="185" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Primary + 2 replicas required</text>
+<rect x="360" y="195" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
+<text x="372" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">mapping-mediator</text>
+<text x="372" y="221" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js + its own MongoDB</text>
+<rect x="360" y="231" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
+<text x="372" y="244" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">fhir-proxy-mediator</text>
+<text x="372" y="257" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Java 8 — separate JVM process</text>
+<rect x="360" y="267" width="340" height="32" rx="5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.8"/>
+<text x="372" y="280" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">HL7v2 mediator</text>
+<text x="372" y="293" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Write it yourself</text>
+<rect x="360" y="303" width="340" height="32" rx="5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.8"/>
+<text x="372" y="316" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">nginx + SSL</text>
+<text x="372" y="329" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Yet another config file</text>
+<line x1="708" y1="90" x2="708" y2="335" stroke="#DDE8F0" stroke-width="1.5"/>
+<line x1="708" y1="212" x2="716" y2="212" stroke="#DDE8F0" stroke-width="1.5"/>
+<text x="720" y="206" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0">7 processes</text>
+<text x="720" y="220" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">to monitor</text>
+<rect x="0" y="358" width="760" height="52" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
+<rect x="0" y="358" width="760" height="12" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
+<text x="100" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#EF4444" letter-spacing="0">7</text>
+<text x="100" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
+<text x="230" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">2</text>
+<text x="230" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
+<text x="370" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">~18K</text>
+<text x="370" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines of code</text>
+<text x="510" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#94A3B8" letter-spacing="0">5+</text>
+<text x="510" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
+<text x="640" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#0EA596" letter-spacing="0">1</text>
+<text x="640" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">JamGateway JAR</text>
 </svg>

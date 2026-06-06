@@ -1,91 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440">
 <defs>
-<marker id="a2" viewBox="0 0 10 10" refX="8" refY="5"
-        markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M0,1 L8,5 L0,9 Z" fill="#0D7A6E"/>
-    </marker>
-<filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<style>text{font-family:-apple-system,"Helvetica Neue",Helvetica,sans-serif}</style>
+  <marker id="arr_road" viewBox="0 0 10 10" refX="9" refY="5"
+    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1,1.5 L8.5,5 L1,8.5 Z" fill="#0C7A6E"/>
+  </marker>
 </defs>
-<rect width="760" height="440" fill="#F0F7FF" rx="8"/>
-<text x="380" y="28" text-anchor="middle" font-size="14" font-weight="800" fill="#0D1F33">National Health Information Exchange — Component Roadmap</text>
-<text x="380" y="44" text-anchor="middle" font-size="10" fill="#5A8AA8">OpenHIE architecture — where the gateway fits and what comes next</text>
-<rect x="20" y="60" width="158" height="140" rx="8" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="2"/>
-<text x="99" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#0D7A6E">Phase 1 — DONE</text>
-<text x="99" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#0A5E54">Interoperability</text>
-<text x="99" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#0A5E54">Gateway</text>
-<text x="28" y="130" font-size="8.5" font-weight="600" fill="#0A5E54">JamGateway ✓</text>
-<text x="28" y="144" font-size="8.5" font-weight="600" fill="#0A5E54">Channel routing ✓</text>
-<text x="28" y="158" font-size="8.5" font-weight="600" fill="#0A5E54">JWT + SMART ✓</text>
-<text x="28" y="172" font-size="8.5" font-weight="600" fill="#0A5E54">IHE ATNA + BALP ✓</text>
-<text x="28" y="186" font-size="8.5" font-weight="600" fill="#0A5E54">OpenHIM compat. ✓</text>
-<rect x="200" y="60" width="158" height="140" rx="8" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
-<text x="279" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#7C3AED">Phase 2 — NEXT</text>
-<text x="279" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6">Client Registry</text>
-<text x="279" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#5B21B6">(Master Patient Index)</text>
-<text x="208" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">HAPI FHIR MDM ✦</text>
-<text x="208" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Golden record ✦</text>
-<text x="208" y="158" font-size="8.5" font-weight="600" fill="#5B21B6">PIXm ITI-83 ✦</text>
-<text x="208" y="172" font-size="8.5" font-weight="600" fill="#5B21B6">PDQm ITI-78 ✦</text>
-<text x="208" y="186" font-size="8.5" font-weight="600" fill="#5B21B6">IHE PMIR ITI-93/94 ✦</text>
-<rect x="380" y="60" width="158" height="140" rx="8" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
-<text x="459" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#D97706">Phase 3</text>
-<text x="459" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#92400E">Facility Registry</text>
-<text x="388" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">mCSD ITI-90 ✦</text>
-<text x="388" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Location codes ✦</text>
-<text x="388" y="158" font-size="8.5" font-weight="400" fill="#64748B">Already deployed*</text>
-<text x="388" y="172" font-size="8.5" font-weight="400" fill="#64748B">Connect via config</text>
-<text x="388" y="186" font-size="8.5" font-weight="400" fill="#64748B">No new software</text>
-<rect x="560" y="60" width="178" height="140" rx="8" fill="#F0F9FF" stroke="#0369A1" stroke-width="1"/>
-<text x="649" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#0369A1">Phase 4</text>
-<text x="649" y="92" text-anchor="middle" font-size="11" font-weight="800" fill="#075985">Shared Health Record</text>
-<text x="649" y="106" text-anchor="middle" font-size="11" font-weight="800" fill="#075985">+ Terminology</text>
-<text x="568" y="130" font-size="8.5" font-weight="600" fill="#5B21B6">HAPI FHIR JPA ✦</text>
-<text x="568" y="144" font-size="8.5" font-weight="600" fill="#5B21B6">Already in stack ✦</text>
-<text x="568" y="158" font-size="8.5" font-weight="600" fill="#5B21B6">SNOMED + LOINC ✦</text>
-<text x="568" y="172" font-size="8.5" font-weight="600" fill="#5B21B6">ICD-10 coding ✦</text>
-<text x="568" y="186" font-size="8.5" font-weight="400" fill="#64748B">FHIR R4 native</text>
-<line x1="178" y1="130" x2="200" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
-<line x1="358" y1="130" x2="380" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
-<line x1="538" y1="130" x2="560" y2="130" stroke="#0D7A6E" stroke-width="1.5" marker-end="url(#a2)"/>
-<text x="99" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#0D7A6E">← YOU ARE HERE</text>
-<line x1="99" y1="213" x2="99" y2="202" stroke="#0D7A6E" stroke-width="1"/>
-<text x="380" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#1B4F8A">How the components talk to each other</text>
-<rect x="20" y="260" width="80" height="44" rx="5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
-<text x="60" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">Hospital</text>
-<text x="60" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#991B1B">HIS</text>
-<rect x="130" y="260" width="80" height="44" rx="5" fill="#EDE9FE" stroke="#9B6FD4" stroke-width="1"/>
-<text x="170" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">SMART</text>
-<text x="170" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">App</text>
-<rect x="250" y="260" width="100" height="44" rx="5" fill="#EAF7F5" stroke="#0D7A6E" stroke-width="1"/>
-<text x="300" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#0A5E54">JamGateway</text>
-<rect x="380" y="260" width="100" height="44" rx="5" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
-<text x="430" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">Client Registry</text>
-<text x="430" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#5B21B6">(MPI)</text>
-<rect x="510" y="260" width="100" height="44" rx="5" fill="#F0F9FF" stroke="#0369A1" stroke-width="1"/>
-<text x="560" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#075985">FHIR Server</text>
-<text x="560" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#075985">(NeHR)</text>
-<rect x="640" y="260" width="110" height="44" rx="5" fill="#FFF7ED" stroke="#D97706" stroke-width="1"/>
-<text x="695" y="278" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">Audit Repo</text>
-<text x="695" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#92400E">(ATNA+BALP)</text>
-<line x1="100" y1="282" x2="130" y2="282" stroke="#EF4444" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="115" y="277" text-anchor="middle" font-size="7.5" fill="#EF4444" font-weight="600">HL7v2 MLLP</text>
-<line x1="210" y1="282" x2="250" y2="282" stroke="#7C3AED" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="230" y="277" text-anchor="middle" font-size="7.5" fill="#7C3AED" font-weight="600">FHIR R4</text>
-<line x1="350" y1="282" x2="380" y2="282" stroke="#0D7A6E" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="365" y="277" text-anchor="middle" font-size="7.5" fill="#0D7A6E" font-weight="600">PIXm/PDQm</text>
-<line x1="480" y1="278" x2="510" y2="278" stroke="#0369A1" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="495" y="273" text-anchor="middle" font-size="7.5" fill="#0369A1" font-weight="600">ITI-78</text>
-<line x1="480" y1="286" x2="510" y2="286" stroke="#0369A1" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="495" y="281" text-anchor="middle" font-size="7.5" fill="#0369A1" font-weight="600">ITI-65</text>
-<line x1="610" y1="282" x2="640" y2="282" stroke="#D97706" stroke-width="1.2" marker-end="url(#a2)"/>
-<text x="625" y="277" text-anchor="middle" font-size="7.5" fill="#D97706" font-weight="600">ATNA/BALP</text>
-<rect x="20" y="325" width="720" height="100" rx="6" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
-<rect x="20" y="325" width="5" height="100" rx="0" fill="#7C3AED"/>
-<text x="40" y="344" font-size="11" font-weight="800" fill="#5B21B6">★ Coming next: Client Registry (Master Patient Index) — the most critical missing piece</text>
-<text x="40" y="362" font-size="9" fill="#4C1D95">Without a Client Registry, the gateway routes requests correctly but systems cannot confirm two records at different facilities belong to the same patient.</text>
-<text x="40" y="378" font-size="9" fill="#4C1D95">HAPI FHIR MDM module implements golden record management, probabilistic matching, Patient/$match, and IHE PMIR (ITI-93/94)</text>
-<text x="40" y="394" font-size="9" fill="#4C1D95">— all on infrastructure already in the JamGateway stack. No new service, no new database, no new language runtime.</text>
-<text x="40" y="414" font-size="8" fill="#6D28D9" font-weight="600">IHE PMIR ITI-93: Mobile Patient Identity Feed (push)  ·  ITI-94: Subscribe to Patient Updates  ·  HAPI MDM: configurable JSON matching rules  ·  Patient/$match operation</text>
+<rect x="0" y="0" width="760" height="440" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
+<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="14" font-weight="700" fill="#0D2B4E" letter-spacing="0">National HIE Architecture — Component Roadmap</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9.5" font-weight="400" fill="#64748B" letter-spacing="0">OpenHIE framework — where JamGateway fits and what comes next</text>
+<line x1="0" y1="56" x2="760" y2="56" stroke="#DDE8F0" stroke-width="1"/>
+<rect x="14" y="62" width="166" height="168" rx="8" fill="#E6F7F5" stroke="#0C7A6E" stroke-width="2"/>
+<rect x="64.0" y="68" width="65.6" height="18" rx="9" fill="#0C7A6E" stroke="none" stroke-width="1"/>
+<text x="97" y="80" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.06em">COMPLETE</text>
+<text x="97" y="100" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#0C7A6E" letter-spacing="0">Interoperability</text>
+<text x="97" y="116" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#0C7A6E" letter-spacing="0">Gateway</text>
+<text x="24" y="128" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">JamGateway ✓</text>
+<text x="24" y="141" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Channel routing ✓</text>
+<text x="24" y="154" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">JWT + SMART ✓</text>
+<text x="24" y="167" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">IHE ATNA+BALP ✓</text>
+<text x="24" y="180" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">OpenHIM compat. ✓</text>
+<text x="97" y="240" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="700" fill="#0C7A6E" letter-spacing="0.04em">▲ you are here</text>
+<rect x="192" y="62" width="166" height="168" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1"/>
+<rect x="254.0" y="68" width="40.8" height="18" rx="9" fill="#7C3AED" stroke="none" stroke-width="1"/>
+<text x="275" y="80" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.06em">NEXT</text>
+<text x="275" y="100" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#7C3AED" letter-spacing="0">Client Registry</text>
+<text x="275" y="116" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#7C3AED" letter-spacing="0">(Master Patient Index)</text>
+<text x="202" y="128" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">HAPI FHIR MDM</text>
+<text x="202" y="141" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">Golden records</text>
+<text x="202" y="154" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">PIXm ITI-83</text>
+<text x="202" y="167" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">PDQm ITI-78</text>
+<text x="202" y="180" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">IHE PMIR ITI-93/94</text>
+<rect x="370" y="62" width="166" height="168" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1"/>
+<rect x="410.0" y="68" width="84.2" height="18" rx="9" fill="#F59E0B" stroke="none" stroke-width="1"/>
+<text x="453" y="80" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.06em">CONFIG ONLY</text>
+<text x="453" y="100" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#92400E" letter-spacing="0">Facility</text>
+<text x="453" y="116" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#92400E" letter-spacing="0">Registry</text>
+<text x="380" y="128" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#92400E" letter-spacing="0">mCSD ITI-90</text>
+<text x="380" y="141" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#92400E" letter-spacing="0">Location codes</text>
+<text x="380" y="154" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#92400E" letter-spacing="0">Already deployed*</text>
+<text x="380" y="167" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#92400E" letter-spacing="0">Connect via config</text>
+<text x="380" y="180" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#92400E" letter-spacing="0">No new software</text>
+<rect x="548" y="62" width="196" height="168" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1"/>
+<rect x="613.0" y="68" width="65.6" height="18" rx="9" fill="#1D4ED8" stroke="none" stroke-width="1"/>
+<text x="646" y="80" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.06em">IN STACK</text>
+<text x="646" y="100" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#1E40AF" letter-spacing="0">Shared Health Record</text>
+<text x="646" y="116" text-anchor="middle" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#1E40AF" letter-spacing="0">+ Terminology</text>
+<text x="558" y="128" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#1E40AF" letter-spacing="0">HAPI FHIR JPA</text>
+<text x="558" y="141" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#1E40AF" letter-spacing="0">Already in stack</text>
+<text x="558" y="154" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#1E40AF" letter-spacing="0">SNOMED · LOINC</text>
+<text x="558" y="167" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#1E40AF" letter-spacing="0">ICD-10 coding</text>
+<text x="558" y="180" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#1E40AF" letter-spacing="0">FHIR R4 native</text>
+<line x1="180" y1="146" x2="192" y2="146" stroke="#0C7A6E" stroke-width="2" marker-end="url(#arr_road)"/>
+<line x1="358" y1="146" x2="370" y2="146" stroke="#0C7A6E" stroke-width="2" marker-end="url(#arr_road)"/>
+<line x1="536" y1="146" x2="548" y2="146" stroke="#0C7A6E" stroke-width="2" marker-end="url(#arr_road)"/>
+<text x="380" y="250" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="11" font-weight="700" fill="#0D2B4E" letter-spacing="0">How the components communicate</text>
+<rect x="14" y="260" width="76" height="46" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.2"/>
+<text x="52" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">Hospital</text>
+<text x="52" y="291" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">HIS</text>
+<rect x="106" y="260" width="76" height="46" rx="6" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.2"/>
+<text x="144" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">SMART</text>
+<text x="144" y="291" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">App</text>
+<rect x="198" y="260" width="96" height="46" rx="6" fill="#E6F7F5" stroke="#0C7A6E" stroke-width="1.2"/>
+<text x="246" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">JamGateway</text>
+<rect x="306" y="260" width="96" height="46" rx="6" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.2"/>
+<text x="354" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">Client</text>
+<text x="354" y="291" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">Registry</text>
+<rect x="414" y="260" width="96" height="46" rx="6" fill="#F0F7FF" stroke="#1D4ED8" stroke-width="1.2"/>
+<text x="462" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">FHIR Server</text>
+<text x="462" y="291" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">(NeHR)</text>
+<rect x="522" y="260" width="96" height="46" rx="6" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="570" y="277" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">Audit Repo</text>
+<text x="570" y="291" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0D2B4E" letter-spacing="0">ATNA+BALP</text>
+<line x1="90" y1="283" x2="106" y2="283" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arr_road)"/>
+<text x="98" y="278" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="600" fill="#EF4444" letter-spacing="0">HL7v2</text>
+<line x1="182" y1="283" x2="198" y2="283" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#arr_road)"/>
+<text x="190" y="278" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="600" fill="#7C3AED" letter-spacing="0">FHIR R4</text>
+<line x1="294" y1="283" x2="306" y2="283" stroke="#0C7A6E" stroke-width="1.5" marker-end="url(#arr_road)"/>
+<text x="300" y="278" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">PIXm</text>
+<line x1="402" y1="283" x2="414" y2="283" stroke="#1D4ED8" stroke-width="1.5" marker-end="url(#arr_road)"/>
+<text x="408" y="278" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="600" fill="#1D4ED8" letter-spacing="0">MHD</text>
+<line x1="510" y1="283" x2="522" y2="283" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#arr_road)"/>
+<text x="516" y="278" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="7.5" font-weight="600" fill="#F59E0B" letter-spacing="0">BALP</text>
+<rect x="14" y="334" width="732" height="96" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.5"/>
+<rect x="14" y="334" width="4" height="96" rx="2" fill="#7C3AED"/>
+<text x="28" y="352" text-anchor="start" font-family="Lora","Georgia",serif font-size="11" font-weight="700" fill="#7C3AED" letter-spacing="0">★ Next: Client Registry on HAPI FHIR MDM — no new service, no new database</text>
+<text x="28" y="370" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">HAPI MDM: golden record management · probabilistic matching · Patient/$match · configurable JSON rules</text>
+<text x="28" y="386" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">IHE PMIR ITI-93: push patient identity changes to all subscribed systems automatically</text>
+<text x="28" y="402" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#7C3AED" letter-spacing="0">IHE PMIR ITI-94: subscribe to patient updates — each facility gets only relevant notifications</text>
+<text x="28" y="418" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">All on infrastructure already in the JamGateway stack. One config flag. Deep-dive blog post coming.</text>
 </svg>

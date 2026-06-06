@@ -6,54 +6,54 @@
   </marker>
 </defs>
 <rect x="0" y="0" width="760" height="410" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
-<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">OpenHIM: README vs Reality</text>
-<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">What you think you're deploying vs what runs at 3am</text>
+<text x="380" y="28" text-anchor="middle" font-family="Lora, Georgia, serif" font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">OpenHIM: README vs Reality</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">What you think you're deploying vs what runs at 3am</text>
 <line x1="0" y1="58" x2="760" y2="58" stroke="#DDE8F0" stroke-width="1"/>
-<text x="186" y="78" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What the README says</text>
+<text x="186" y="78" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What the README says</text>
 <rect x="86" y="90" width="200" height="56" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5"/>
-<text x="186" y="118" text-anchor="middle" font-family="JetBrains Mono","Fira Code",monospace font-size="12" font-weight="700" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
-<text x="186" y="134" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">npm install + docker compose up</text>
+<text x="186" y="118" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" font-weight="700" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
+<text x="186" y="134" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">npm install + docker compose up</text>
 <circle cx="186" cy="162" r="14" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
-<text x="186" y="167" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="700" fill="#16A34A" letter-spacing="0">✓</text>
-<text x="186" y="184" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">Simple?</text>
+<text x="186" y="167" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#16A34A" letter-spacing="0">✓</text>
+<text x="186" y="184" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">Simple?</text>
 <line x1="295" y1="120" x2="345" y2="120" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr_pain)"/>
-<text x="320" y="113" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#EF4444" letter-spacing="0">reality</text>
-<text x="548" y="78" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What you actually end up running</text>
+<text x="320" y="113" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="600" fill="#EF4444" letter-spacing="0">reality</text>
+<text x="548" y="78" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#EF4444" letter-spacing="0.05em">What you actually end up running</text>
 <rect x="360" y="87" width="340" height="32" rx="5" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.8"/>
-<text x="372" y="100" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
-<text x="372" y="113" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js 14 — EOL since 2023</text>
+<text x="372" y="100" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-core-js</text>
+<text x="372" y="113" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js 14 — EOL since 2023</text>
 <rect x="360" y="123" width="340" height="32" rx="5" fill="#FEF2F2" stroke="#EF4444" stroke-width="0.8"/>
-<text x="372" y="136" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-console</text>
-<text x="372" y="149" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA — separate deploy</text>
+<text x="372" y="136" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">openhim-console</text>
+<text x="372" y="149" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA — separate deploy</text>
 <rect x="360" y="159" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
-<text x="372" y="172" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">MongoDB replica set</text>
-<text x="372" y="185" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Primary + 2 replicas required</text>
+<text x="372" y="172" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">MongoDB replica set</text>
+<text x="372" y="185" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Primary + 2 replicas required</text>
 <rect x="360" y="195" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
-<text x="372" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">mapping-mediator</text>
-<text x="372" y="221" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js + its own MongoDB</text>
+<text x="372" y="208" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">mapping-mediator</text>
+<text x="372" y="221" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Node.js + its own MongoDB</text>
 <rect x="360" y="231" width="340" height="32" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="0.8"/>
-<text x="372" y="244" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">fhir-proxy-mediator</text>
-<text x="372" y="257" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Java 8 — separate JVM process</text>
+<text x="372" y="244" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">fhir-proxy-mediator</text>
+<text x="372" y="257" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Java 8 — separate JVM process</text>
 <rect x="360" y="267" width="340" height="32" rx="5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.8"/>
-<text x="372" y="280" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">HL7v2 mediator</text>
-<text x="372" y="293" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Write it yourself</text>
+<text x="372" y="280" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">HL7v2 mediator</text>
+<text x="372" y="293" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Write it yourself</text>
 <rect x="360" y="303" width="340" height="32" rx="5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.8"/>
-<text x="372" y="316" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">nginx + SSL</text>
-<text x="372" y="329" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Yet another config file</text>
+<text x="372" y="316" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0D2B4E" letter-spacing="0">nginx + SSL</text>
+<text x="372" y="329" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Yet another config file</text>
 <line x1="708" y1="90" x2="708" y2="335" stroke="#DDE8F0" stroke-width="1.5"/>
 <line x1="708" y1="212" x2="716" y2="212" stroke="#DDE8F0" stroke-width="1.5"/>
-<text x="720" y="206" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0">7 processes</text>
-<text x="720" y="220" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">to monitor</text>
+<text x="720" y="206" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="0">7 processes</text>
+<text x="720" y="220" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">to monitor</text>
 <rect x="0" y="358" width="760" height="52" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
 <rect x="0" y="358" width="760" height="12" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
-<text x="100" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#EF4444" letter-spacing="0">7</text>
-<text x="100" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
-<text x="230" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">2</text>
-<text x="230" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
-<text x="370" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">~18K</text>
-<text x="370" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines of code</text>
-<text x="510" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#94A3B8" letter-spacing="0">5+</text>
-<text x="510" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
-<text x="640" y="382" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="18" font-weight="800" fill="#0EA596" letter-spacing="0">1</text>
-<text x="640" y="398" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">JamGateway JAR</text>
+<text x="100" y="382" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#EF4444" letter-spacing="0">7</text>
+<text x="100" y="398" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
+<text x="230" y="382" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">2</text>
+<text x="230" y="398" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
+<text x="370" y="382" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#F59E0B" letter-spacing="0">~18K</text>
+<text x="370" y="398" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines of code</text>
+<text x="510" y="382" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#94A3B8" letter-spacing="0">5+</text>
+<text x="510" y="398" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
+<text x="640" y="382" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#0EA596" letter-spacing="0">1</text>
+<text x="640" y="398" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">JamGateway JAR</text>
 </svg>

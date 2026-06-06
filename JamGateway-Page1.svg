@@ -6,83 +6,83 @@
   </marker>
 </defs>
 <rect x="0" y="0" width="760" height="490" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
-<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">One JAR Replaces Five OpenHIM Services</text>
-<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">Every OpenHIM module mapped to its JamGateway equivalent</text>
+<text x="380" y="28" text-anchor="middle" font-family="Lora, Georgia, serif" font-size="15" font-weight="700" fill="#0D2B4E" letter-spacing="0">One JAR Replaces Five OpenHIM Services</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#64748B" letter-spacing="0">Every OpenHIM module mapped to its JamGateway equivalent</text>
 <line x1="0" y1="56" x2="760" y2="56" stroke="#DDE8F0" stroke-width="1"/>
 <rect x="16" y="62" width="228" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
-<text x="130" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0D2B4E" letter-spacing="0.05em">OpenHIM Module</text>
+<text x="130" y="77" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="700" fill="#0D2B4E" letter-spacing="0.05em">OpenHIM Module</text>
 <rect x="252" y="62" width="116" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
-<text x="310" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JAR</text>
+<text x="310" y="77" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JAR</text>
 <rect x="376" y="62" width="368" height="22" rx="4" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0.8"/>
-<text x="560" y="77" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JamGateway Class + Capability</text>
+<text x="560" y="77" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="700" fill="#0C7A6E" letter-spacing="0.05em">JamGateway Class + Capability</text>
 <rect x="16" y="88" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
 <line x1="16" y1="164" x2="744" y2="164" stroke="#DDE8F0" stroke-width="0.5"/>
 <rect x="16" y="88" width="228" height="76" rx="0" fill="#FEF2F2" stroke="none" stroke-width="1"/>
-<text x="24" y="106" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-core-js</text>
-<text x="24" y="121" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+MongoDB</text>
-<text x="310" y="131" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
-<text x="384" y="104" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">FhirGatewayRoute</text>
-<text x="384" y="120" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ChannelRegistry</text>
-<text x="384" y="136" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">TransactionLogProcessor</text>
-<text x="384" y="150" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Hot-reload routing · fan-out · rate limit · tx log</text>
-<text x="384" y="160" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Java JVM · Postgres replaces MongoDB · owned IHE code</text>
+<text x="24" y="106" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-core-js</text>
+<text x="24" y="121" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+MongoDB</text>
+<text x="310" y="131" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="104" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">FhirGatewayRoute</text>
+<text x="384" y="120" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ChannelRegistry</text>
+<text x="384" y="136" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">TransactionLogProcessor</text>
+<text x="384" y="150" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Hot-reload routing · fan-out · rate limit · tx log</text>
+<text x="384" y="160" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Java JVM · Postgres replaces MongoDB · owned IHE code</text>
 <rect x="16" y="164" width="728" height="76" rx="0" fill="#FFFFFF" stroke="#DDE8F0" stroke-width="0.4"/>
 <line x1="16" y1="240" x2="744" y2="240" stroke="#DDE8F0" stroke-width="0.5"/>
 <rect x="16" y="164" width="228" height="76" rx="0" fill="#FEF2F2" stroke="none" stroke-width="1"/>
-<text x="24" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-console</text>
-<text x="24" y="197" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA</text>
-<text x="310" y="207" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
-<text x="384" y="180" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">9 Thymeleaf+HTMX</text>
-<text x="384" y="196" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">AdminChannelController</text>
-<text x="384" y="212" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ConfigExportController</text>
-<text x="384" y="226" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Admin UI · tx viewer · cert mgmt · config export</text>
-<text x="384" y="236" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">No npm · no build step · CSRF via Spring natively</text>
+<text x="24" y="182" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10.5" font-weight="700" fill="#EF4444" letter-spacing="0">openhim-console</text>
+<text x="24" y="197" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Angular SPA</text>
+<text x="310" y="207" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="180" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">9 Thymeleaf+HTMX</text>
+<text x="384" y="196" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">AdminChannelController</text>
+<text x="384" y="212" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">ConfigExportController</text>
+<text x="384" y="226" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">Admin UI · tx viewer · cert mgmt · config export</text>
+<text x="384" y="236" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">No npm · no build step · CSRF via Spring natively</text>
 <rect x="16" y="240" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
 <line x1="16" y1="316" x2="744" y2="316" stroke="#DDE8F0" stroke-width="0.5"/>
 <rect x="16" y="240" width="228" height="76" rx="0" fill="#FFFBEB" stroke="none" stroke-width="1"/>
-<text x="24" y="258" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">mapping-mediator</text>
-<text x="24" y="273" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+Mongo cluster</text>
-<text x="310" y="283" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
-<text x="384" y="256" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2ToFhirMapper</text>
-<text x="384" y="272" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2MllpBridgeRoute</text>
-<text x="384" y="288" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">camel-mllp + HAPI HL7v2</text>
-<text x="384" y="302" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">ADT A04/A08/A40 + ORU R01 → FHIR R4</text>
-<text x="384" y="312" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Native in core · no MongoDB cluster needed</text>
+<text x="24" y="258" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">mapping-mediator</text>
+<text x="24" y="273" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Node.js+Mongo cluster</text>
+<text x="310" y="283" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#0C7A6E" letter-spacing="0">→</text>
+<text x="384" y="256" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2ToFhirMapper</text>
+<text x="384" y="272" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">Hl7v2MllpBridgeRoute</text>
+<text x="384" y="288" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#0C7A6E" letter-spacing="0">camel-mllp + HAPI HL7v2</text>
+<text x="384" y="302" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">ADT A04/A08/A40 + ORU R01 → FHIR R4</text>
+<text x="384" y="312" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">Native in core · no MongoDB cluster needed</text>
 <rect x="16" y="316" width="728" height="76" rx="0" fill="#FFFFFF" stroke="#DDE8F0" stroke-width="0.4"/>
 <line x1="16" y1="392" x2="744" y2="392" stroke="#DDE8F0" stroke-width="0.5"/>
 <rect x="16" y="316" width="228" height="76" rx="0" fill="#FFFBEB" stroke="none" stroke-width="1"/>
-<text x="24" y="334" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">fhir-proxy-mediator</text>
-<text x="24" y="349" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Java service</text>
-<text x="310" y="359" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
-<text x="384" y="332" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">FhirClientService</text>
-<text x="384" y="348" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartScopeEnforcer</text>
-<text x="384" y="364" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartConfigController</text>
-<text x="384" y="378" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">PDQm · MHD · PIXm · JWT · SMART on FHIR</text>
-<text x="384" y="388" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ JWT+SMART native — OpenHIM has zero SMART</text>
+<text x="24" y="334" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10.5" font-weight="700" fill="#F59E0B" letter-spacing="0">fhir-proxy-mediator</text>
+<text x="24" y="349" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">Java service</text>
+<text x="310" y="359" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
+<text x="384" y="332" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">FhirClientService</text>
+<text x="384" y="348" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartScopeEnforcer</text>
+<text x="384" y="364" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">SmartConfigController</text>
+<text x="384" y="378" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">PDQm · MHD · PIXm · JWT · SMART on FHIR</text>
+<text x="384" y="388" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ JWT+SMART native — OpenHIM has zero SMART</text>
 <rect x="16" y="392" width="728" height="76" rx="0" fill="#FAFCFF" stroke="#DDE8F0" stroke-width="0.4"/>
 <line x1="16" y1="468" x2="744" y2="468" stroke="#DDE8F0" stroke-width="0.5"/>
 <rect x="16" y="392" width="228" height="76" rx="0" fill="#F8FAFC" stroke="none" stroke-width="1"/>
-<text x="24" y="410" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10.5" font-weight="700" fill="#94A3B8" letter-spacing="0">custom audit mediator</text>
-<text x="24" y="425" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">per-deployment</text>
-<text x="310" y="435" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
-<text x="384" y="408" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AtnaService (RFC 5425)</text>
-<text x="384" y="424" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">BalpAuditEventMapper</text>
-<text x="384" y="440" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AlertService</text>
-<text x="384" y="454" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">TLS syslog + DB + FHIR R4 AuditEvent + email/SMS</text>
-<text x="384" y="464" text-anchor="start" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ IHE BALP native — OpenHIM has no FHIR audit</text>
+<text x="24" y="410" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10.5" font-weight="700" fill="#94A3B8" letter-spacing="0">custom audit mediator</text>
+<text x="24" y="425" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8.5" font-weight="400" fill="#64748B" letter-spacing="0">per-deployment</text>
+<text x="310" y="435" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#7C3AED" letter-spacing="0">→</text>
+<text x="384" y="408" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AtnaService (RFC 5425)</text>
+<text x="384" y="424" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">BalpAuditEventMapper</text>
+<text x="384" y="440" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" font-weight="600" fill="#7C3AED" letter-spacing="0">AlertService</text>
+<text x="384" y="454" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#64748B" letter-spacing="0">TLS syslog + DB + FHIR R4 AuditEvent + email/SMS</text>
+<text x="384" y="464" text-anchor="start" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="600" fill="#7C3AED" letter-spacing="0">★ IHE BALP native — OpenHIM has no FHIR audit</text>
 <line x1="244" y1="62" x2="244" y2="468" stroke="#DDE8F0" stroke-width="0.8"/>
 <line x1="372" y1="62" x2="372" y2="468" stroke="#DDE8F0" stroke-width="0.8"/>
 <rect x="0" y="470" width="760" height="20" rx="0" fill="#0D2B4E" stroke="none" stroke-width="1"/>
-<text x="80" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
-<text x="80" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
-<text x="200" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">2→1</text>
-<text x="200" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
-<text x="340" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">~18K→6K</text>
-<text x="340" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines</text>
-<text x="470" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
-<text x="470" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
-<text x="610" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ JWT+SMART</text>
-<text x="610" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">native</text>
-<text x="710" y="496" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ IHE BALP</text>
-<text x="710" y="510" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">FHIR audit</text>
+<text x="80" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
+<text x="80" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">services</text>
+<text x="200" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">2→1</text>
+<text x="200" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">databases</text>
+<text x="340" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">~18K→6K</text>
+<text x="340" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">lines</text>
+<text x="470" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#0EA596" letter-spacing="0">5→1</text>
+<text x="470" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">log files</text>
+<text x="610" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ JWT+SMART</text>
+<text x="610" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">native</text>
+<text x="710" y="496" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#C084FC" letter-spacing="0">★ IHE BALP</text>
+<text x="710" y="510" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#94A3B8" letter-spacing="0">FHIR audit</text>
 </svg>

@@ -6,77 +6,77 @@
   </marker>
 </defs>
 <rect x="0" y="0" width="760" height="340" rx="12" fill="#F0F5FA" stroke="none" stroke-width="1"/>
-<text x="380" y="28" text-anchor="middle" font-family="Lora","Georgia",serif font-size="14" font-weight="700" fill="#0D2B4E" letter-spacing="0">Inside jam-gateway.jar — Four Layers, One Process</text>
-<text x="380" y="46" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9.5" font-weight="400" fill="#64748B" letter-spacing="0">5,872 lines · 43 Java files · no npm · no MongoDB · no IPF dependency</text>
+<text x="380" y="28" text-anchor="middle" font-family="Lora, Georgia, serif" font-size="14" font-weight="700" fill="#0D2B4E" letter-spacing="0">Inside jam-gateway.jar — Four Layers, One Process</text>
+<text x="380" y="46" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#64748B" letter-spacing="0">5,872 lines · 43 Java files · no npm · no MongoDB · no IPF dependency</text>
 <line x1="0" y1="56" x2="760" y2="56" stroke="#DDE8F0" stroke-width="1"/>
 <rect x="12" y="64" width="736" height="230" rx="10" fill="#FFFFFF" stroke="#0C7A6E" stroke-width="2"/>
-<text x="24" y="80" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="10" font-weight="600" fill="#0C7A6E" letter-spacing="0">$ java -jar jam-gateway.jar</text>
+<text x="24" y="80" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" font-weight="600" fill="#0C7A6E" letter-spacing="0">$ java -jar jam-gateway.jar</text>
 <line x1="12" y1="88" x2="748" y2="88" stroke="#0C7A6E" stroke-width="0.8" opacity="0.3"/>
 <rect x="18" y="94" width="172" height="196" rx="6" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1"/>
-<text x="104" y="110" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#1D4ED8" letter-spacing="0.04em">Security</text>
+<text x="104" y="110" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#1D4ED8" letter-spacing="0.04em">Security</text>
 <line x1="24" y1="116" x2="184" y2="116" stroke="#1D4ED8" stroke-width="0.5" opacity="0.4"/>
 <circle cx="28" cy="126" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="130" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">Spring Security OAuth2</text>
+<text x="36" y="130" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">Spring Security OAuth2</text>
 <circle cx="28" cy="152" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="156" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">JWT Bearer validation</text>
+<text x="36" y="156" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">JWT Bearer validation</text>
 <circle cx="28" cy="178" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">SMART scope enforcer</text>
+<text x="36" y="182" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">SMART scope enforcer</text>
 <circle cx="28" cy="204" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">SmartConfigController</text>
+<text x="36" y="208" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">SmartConfigController</text>
 <circle cx="28" cy="230" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="234" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">mTLS + Basic auth</text>
+<text x="36" y="234" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">mTLS + Basic auth</text>
 <circle cx="28" cy="256" r="2.5" fill="#1D4ED8" opacity="0.5"/>
-<text x="36" y="260" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">CertMgmtService</text>
+<text x="36" y="260" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#1E40AF" letter-spacing="0">CertMgmtService</text>
 <rect x="198" y="94" width="172" height="196" rx="6" fill="#E6F7F5" stroke="#0C7A6E" stroke-width="1"/>
-<text x="284" y="110" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#0C7A6E" letter-spacing="0.04em">Routing</text>
+<text x="284" y="110" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#0C7A6E" letter-spacing="0.04em">Routing</text>
 <line x1="204" y1="116" x2="364" y2="116" stroke="#0C7A6E" stroke-width="0.5" opacity="0.4"/>
 <circle cx="208" cy="126" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="130" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">Apache Camel 4 routes</text>
+<text x="216" y="130" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">Apache Camel 4 routes</text>
 <circle cx="208" cy="152" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="156" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">FhirGatewayRoute</text>
+<text x="216" y="156" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">FhirGatewayRoute</text>
 <circle cx="208" cy="178" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">Hl7v2MllpBridgeRoute</text>
+<text x="216" y="182" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">Hl7v2MllpBridgeRoute</text>
 <circle cx="208" cy="204" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">ChannelRegistry</text>
+<text x="216" y="208" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">ChannelRegistry</text>
 <circle cx="208" cy="230" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="234" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">ChannelFanOut</text>
+<text x="216" y="234" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">ChannelFanOut</text>
 <circle cx="208" cy="256" r="2.5" fill="#0C7A6E" opacity="0.5"/>
-<text x="216" y="260" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">RateLimitStore</text>
+<text x="216" y="260" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#065F46" letter-spacing="0">RateLimitStore</text>
 <rect x="378" y="94" width="172" height="196" rx="6" fill="#FFFBEB" stroke="#B45309" stroke-width="1"/>
-<text x="464" y="110" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#B45309" letter-spacing="0.04em">Audit</text>
+<text x="464" y="110" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#B45309" letter-spacing="0.04em">Audit</text>
 <line x1="384" y1="116" x2="544" y2="116" stroke="#B45309" stroke-width="0.5" opacity="0.4"/>
 <circle cx="388" cy="126" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="130" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AtnaService (RFC 5425)</text>
+<text x="396" y="130" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AtnaService (RFC 5425)</text>
 <circle cx="388" cy="152" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="156" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">IheAuditBuilder</text>
+<text x="396" y="156" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">IheAuditBuilder</text>
 <circle cx="388" cy="178" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">BalpAuditEventMapper</text>
+<text x="396" y="182" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">BalpAuditEventMapper</text>
 <circle cx="388" cy="204" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">BalpSender (FHIR POST)</text>
+<text x="396" y="208" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">BalpSender (FHIR POST)</text>
 <circle cx="388" cy="230" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="234" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AlertService (email+SMS)</text>
+<text x="396" y="234" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AlertService (email+SMS)</text>
 <circle cx="388" cy="256" r="2.5" fill="#B45309" opacity="0.5"/>
-<text x="396" y="260" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AtnaRfc5425Sender</text>
+<text x="396" y="260" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#92400E" letter-spacing="0">AtnaRfc5425Sender</text>
 <rect x="558" y="94" width="180" height="196" rx="6" fill="#FAF5FF" stroke="#7C3AED" stroke-width="1"/>
-<text x="648" y="110" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="700" fill="#7C3AED" letter-spacing="0.04em">Admin</text>
+<text x="648" y="110" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#7C3AED" letter-spacing="0.04em">Admin</text>
 <line x1="564" y1="116" x2="732" y2="116" stroke="#7C3AED" stroke-width="0.5" opacity="0.4"/>
 <circle cx="568" cy="126" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="130" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">9 Thymeleaf screens</text>
+<text x="576" y="130" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">9 Thymeleaf screens</text>
 <circle cx="568" cy="152" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="156" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminChannelController</text>
+<text x="576" y="156" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminChannelController</text>
 <circle cx="568" cy="178" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="182" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminTransactionCtrl</text>
+<text x="576" y="182" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminTransactionCtrl</text>
 <circle cx="568" cy="204" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="208" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">ConfigExportController</text>
+<text x="576" y="208" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">ConfigExportController</text>
 <circle cx="568" cy="230" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="234" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">TransactionLogProcessor</text>
+<text x="576" y="234" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">TransactionLogProcessor</text>
 <circle cx="568" cy="256" r="2.5" fill="#7C3AED" opacity="0.5"/>
-<text x="576" y="260" text-anchor="start" font-family="JetBrains Mono","Fira Code",monospace font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminAuditController</text>
+<text x="576" y="260" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="8.5" font-weight="500" fill="#6B21A8" letter-spacing="0">AdminAuditController</text>
 <line x1="194" y1="94" x2="194" y2="290" stroke="#DDE8F0" stroke-width="0.8"/>
 <line x1="374" y1="94" x2="374" y2="290" stroke="#DDE8F0" stroke-width="0.8"/>
 <line x1="554" y1="94" x2="554" y2="290" stroke="#DDE8F0" stroke-width="0.8"/>
 <rect x="0" y="300" width="760" height="40" rx="0" fill="#F0F7FF" stroke="#DDE8F0" stroke-width="0"/>
 <line x1="0" y1="300" x2="760" y2="300" stroke="#DDE8F0" stroke-width="1"/>
-<text x="380" y="318" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">PostgreSQL (Spring Data JPA)  ·  Redis optional  ·  H2 in-memory for tests</text>
-<text x="380" y="333" text-anchor="middle" font-family="DM Sans","Helvetica Neue",Helvetica,sans-serif font-size="9" font-weight="600" fill="#0C7A6E" letter-spacing="0">One process · One database · One log file</text>
+<text x="380" y="318" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#64748B" letter-spacing="0">PostgreSQL (Spring Data JPA)  ·  Redis optional  ·  H2 in-memory for tests</text>
+<text x="380" y="333" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Helvetica, sans-serif" font-size="9" font-weight="600" fill="#0C7A6E" letter-spacing="0">One process · One database · One log file</text>
 </svg>

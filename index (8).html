@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Akhester Blog — Architecture · Health Informatics · Java</title>
+<meta name="description" content="Deep technical writing on Java architecture, health interoperability, and building national-scale infrastructure. By Akhil Ester."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:#FAFAF8;
+  color:#1C1C1C;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+
+/* ── Tokens ───────────────────────────────────────────────────── */
+:root{
+  --navy:   #0F2B4C;
+  --teal:   #0C6E62;
+  --teal-l: #0F8F80;
+  --gold:   #C4843A;
+  --ink:    #1C1C1C;
+  --ink-2:  #3D3D3D;
+  --ink-3:  #6B6B6B;
+  --rule:   #E2E2DC;
+  --bg:     #FAFAF8;
+  --bg-2:   #F3F3EF;
+  --white:  #FFFFFF;
+}
+
+/* ── Site header ──────────────────────────────────────────────── */
+.site-header{
+  border-bottom:1px solid var(--rule);
+  padding:0 clamp(1.5rem,5vw,4rem);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+  background:var(--white);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.site-logo{
+  font-family:'Lora',serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-.02em;
+}
+.site-logo span{color:var(--teal)}
+.site-nav{display:flex;gap:2rem;list-style:none}
+.site-nav a{
+  font-size:.875rem;
+  font-weight:500;
+  color:var(--ink-3);
+  letter-spacing:.01em;
+  transition:color .15s;
+}
+.site-nav a:hover{color:var(--teal)}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+.hero{
+  background:var(--navy);
+  padding:5rem clamp(1.5rem,5vw,4rem) 4rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(12,110,98,.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(196,132,58,.12) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{max-width:760px;position:relative}
+.hero-eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-size:.8rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--teal-l);
+  margin-bottom:1.25rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--teal-l)}
+.hero h1{
+  font-family:'Lora',serif;
+  font-size:clamp(2rem,4.5vw,3.25rem);
+  font-weight:700;
+  color:#fff;
+  line-height:1.15;
+  letter-spacing:-.03em;
+  margin-bottom:1.25rem;
+}
+.hero-sub{
+  font-size:1.0625rem;
+  color:rgba(255,255,255,.65);
+  line-height:1.75;
+  max-width:580px;
+}
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-top:2rem;
+}
+.hero-tags a{
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  padding:4px 12px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.6);
+  transition:all .15s;
+}
+.hero-tags a:hover{border-color:var(--teal-l);color:var(--teal-l)}
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.page-body{
+  max-width:1180px;
+  margin:0 auto;
+  padding:3.5rem clamp(1.5rem,5vw,4rem);
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:4rem;
+  align-items:start;
+}
+@media(max-width:900px){
+  .page-body{grid-template-columns:1fr;gap:2.5rem}
+  .sidebar{display:none}
+}
+
+/* ── Section label ────────────────────────────────────────────── */
+.section-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:1.75rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.section-label::after{content:'';flex:1;height:1px;background:var(--rule)}
+
+/* ── Featured post ────────────────────────────────────────────── */
+.featured-post{
+  background:var(--white);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:2.5rem;
+  transition:box-shadow .2s,transform .15s;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.featured-post:hover{
+  box-shadow:0 8px 40px rgba(15,43,76,.1);
+  transform:translateY(-2px);
+}
+@media(max-width:680px){.featured-post{grid-template-columns:1fr}}
+.featured-post-img{
+  background:linear-gradient(135deg,var(--navy) 0%,#1B4F8A 50%,var(--teal) 100%);
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  position:relative;
+  overflow:hidden;
+}
+.featured-post-img::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.feat-badge{
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.feat-badge-icon{
+  font-size:3rem;
+  display:block;
+  margin-bottom:.75rem;
+  filter:drop-shadow(0 4px 16px rgba(0,0,0,.3));
+}
+.feat-badge-text{
+  font-family:'Lora',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:#fff;
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+.featured-post-body{padding:2.25rem}
+.post-meta-row{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:.875rem;
+}
+.post-cat{
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--teal);
+  padding:2px 10px;
+  border:1px solid rgba(12,110,98,.25);
+  border-radius:20px;
+}
+.post-cat-2{color:var(--gold);border-color:rgba(196,132,58,.25)}
+.post-date{font-size:.8125rem;color:var(--ink-3)}
+.featured-post-body h2{
+  font-family:'Lora',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.3;
+  letter-spacing:-.02em;
+  margin-bottom:.875rem;
+  transition:color .15s;
+}
+.featured-post:hover .featured-post-body h2{color:var(--teal)}
+.featured-post-body p{
+  font-size:.9375rem;
+  color:var(--ink-2);
+  line-height:1.75;
+  margin-bottom:1.25rem;
+}
+.read-more{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.875rem;
+  font-weight:600;
+  color:var(--teal);
+  transition:gap .15s;
+}
+.read-more:hover{gap:.75rem}
+.read-more svg{transition:transform .15s}
+.read-more:hover svg{transform:translateX(3px)}
+
+/* ── Post list ────────────────────────────────────────────────── */
+.post-list{display:flex;flex-direction:column;gap:1.5px;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--rule)}
+.post-card{
+  background:var(--white);
+  padding:1.5rem 1.75rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:1rem;
+  align-items:center;
+  transition:background .12s;
+  cursor:pointer;
+}
+.post-card:hover{background:var(--bg-2)}
+.post-card-left{}
+.post-card h3{
+  font-family:'Lora',serif;
+  font-size:1.0625rem;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.35;
+  letter-spacing:-.01em;
+  margin-bottom:.4rem;
+  transition:color .12s;
+}
+.post-card:hover h3{color:var(--teal)}
+.post-card p{font-size:.875rem;color:var(--ink-3);line-height:1.6}
+.post-card-right{text-align:right;flex-shrink:0}
+.post-card-right .post-date{font-size:.8rem;color:var(--ink-3);white-space:nowrap}
+.post-card-right .read-time{font-size:.75rem;color:var(--ink-3);margin-top:2px}
+.coming-soon{
+  opacity:.5;
+  cursor:default;
+}
+.coming-soon-badge{
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:rgba(196,132,58,.1);
+  padding:2px 8px;
+  border-radius:4px;
+  display:inline-block;
+  margin-top:4px;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────── */
+.sidebar{position:sticky;top:84px}
+.sidebar-card{
+  background:var(--white);
+  border:1px solid var(--rule);
+  border-radius:10px;
+  padding:1.5rem;
+  margin-bottom:1.25rem;
+}
+.sidebar-card h4{
+  font-family:'DM Sans',sans-serif;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin-bottom:1rem;
+  padding-bottom:.625rem;
+  border-bottom:1px solid var(--rule);
+}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.375rem}
+.tag-cloud a{
+  font-size:.75rem;
+  font-weight:500;
+  padding:3px 10px;
+  border-radius:20px;
+  background:var(--bg-2);
+  color:var(--ink-2);
+  transition:all .12s;
+}
+.tag-cloud a:hover{background:var(--teal);color:#fff}
+.about-text{font-size:.875rem;color:var(--ink-2);line-height:1.7}
+.about-text strong{color:var(--navy)}
+.series-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.series-list li{font-size:.875rem}
+.series-list li a{color:var(--ink-2);transition:color .12s;display:flex;align-items:center;gap:.5rem;line-height:1.4}
+.series-list li a:hover{color:var(--teal)}
+.series-list li a::before{content:'→';color:var(--teal);font-size:.8rem;flex-shrink:0}
+.series-list li.active a{color:var(--teal);font-weight:600}
+.series-list li.active a::before{content:'●';font-size:.5rem}
+.series-list li.upcoming a{opacity:.5;cursor:default}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--rule);
+  padding:2rem clamp(1.5rem,5vw,4rem);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  background:var(--white);
+}
+footer .logo{
+  font-family:'Lora',serif;
+  font-weight:700;
+  color:var(--navy);
+  font-size:1rem;
+}
+footer p{font-size:.8125rem;color:var(--ink-3)}
+footer nav{display:flex;gap:1.5rem}
+footer nav a{font-size:.8125rem;color:var(--ink-3);transition:color .12s}
+footer nav a:hover{color:var(--teal)}
+
+@media(max-width:600px){
+  .site-nav{display:none}
+  .post-card{grid-template-columns:1fr}
+  .post-card-right{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">akhester<span>.blog</span></a>
+  <ul class="site-nav">
+    <li><a href="#">Architecture</a></li>
+    <li><a href="#">Health Informatics</a></li>
+    <li><a href="#">Java</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Technical writing for engineers</div>
+    <h1>Architecture that scales.<br/>Systems that matter.</h1>
+    <p class="hero-sub">Deep technical analysis of Java architecture, health interoperability infrastructure, and the engineering decisions behind national-scale systems. Written for CTOs, architects, and senior engineers.</p>
+    <div class="hero-tags">
+      <a href="#">OpenHIM</a><a href="#">FHIR R4</a><a href="#">Spring Boot</a>
+      <a href="#">Apache Camel</a><a href="#">IHE Standards</a><a href="#">HIE</a>
+      <a href="#">SMART on FHIR</a><a href="#">HAPI FHIR</a>
+    </div>
+  </div>
+</section>
+
+<div class="page-body">
+  <main>
+    <div class="section-label">Featured</div>
+
+    <a href="post-openhim.html" style="display:block">
+      <article class="featured-post">
+        <div class="featured-post-img">
+          <div class="feat-badge">
+            <span class="feat-badge-icon">⚙️</span>
+            <div class="feat-badge-text">1 JAR<br/>5 Services</div>
+          </div>
+        </div>
+        <div class="featured-post-body">
+          <div class="post-meta-row">
+            <span class="post-cat">Architecture</span>
+            <span class="post-cat post-cat-2">Health Informatics</span>
+            <span class="post-date">Jun 6, 2026</span>
+          </div>
+          <h2>Why We Replaced OpenHIM With a Single Java JAR — and Built a Better Health Gateway in the Process</h2>
+          <p>A deep technical analysis of OpenHIM's structural limitations, what a modern Spring Boot + Apache Camel + HAPI FHIR alternative looks like, and why national-scale health infrastructure deserves better foundations.</p>
+          <span class="read-more">Read article — 18 min
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+    </a>
+
+    <div class="section-label" style="margin-top:2.5rem">All Posts</div>
+
+    <div class="post-list">
+
+      <a href="post-openhim.html">
+        <div class="post-card">
+          <div class="post-card-left">
+            <div class="post-meta-row" style="margin-bottom:.4rem">
+              <span class="post-cat">Architecture</span>
+              <span class="post-cat post-cat-2">Health Informatics</span>
+            </div>
+            <h3>Why We Replaced OpenHIM With a Single Java JAR</h3>
+            <p>~99% OpenHIM parity. JWT + SMART on FHIR. IHE BALP. One deployable unit instead of five services.</p>
+          </div>
+          <div class="post-card-right">
+            <div class="post-date">Jun 6, 2026</div>
+            <div class="read-time">18 min read</div>
+          </div>
+        </div>
+      </a>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-left">
+          <div class="post-meta-row" style="margin-bottom:.4rem">
+            <span class="post-cat">Health Informatics</span>
+          </div>
+          <h3>Building a National Patient Registry on IHE PMIR and HAPI FHIR MDM</h3>
+          <p>Why OpenCR is dead, why SantéMPI is overkill, and how HAPI FHIR's MDM module gives you a full Master Patient Index on infrastructure you already own.</p>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <div class="post-card-right">
+          <div class="read-time">~20 min</div>
+        </div>
+      </div>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-left">
+          <div class="post-meta-row" style="margin-bottom:.4rem">
+            <span class="post-cat">Architecture</span>
+          </div>
+          <h3>IHE BALP vs ATNA — What Changed in 2022 and Why Your Audit Trail Is Probably Wrong</h3>
+          <p>DICOM syslog is not enough anymore. FHIR R4 AuditEvent, the BALP supplement, and what national HIEs need to do differently.</p>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <div class="post-card-right">
+          <div class="read-time">~12 min</div>
+        </div>
+      </div>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-left">
+          <div class="post-meta-row" style="margin-bottom:.4rem">
+            <span class="post-cat">Java</span>
+          </div>
+          <h3>Apache Camel 4 for Health Routing — Fan-out, MLLP, Rate Limiting, and Dead Letter Queues</h3>
+          <p>How to build a production health message router with Camel 4 that handles HL7v2 and FHIR R4 without losing a single transaction.</p>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <div class="post-card-right">
+          <div class="read-time">~15 min</div>
+        </div>
+      </div>
+
+      <div class="post-card coming-soon">
+        <div class="post-card-left">
+          <div class="post-meta-row" style="margin-bottom:.4rem">
+            <span class="post-cat">Architecture</span>
+          </div>
+          <h3>SMART on FHIR App Launch — Implementing Scope Enforcement in a Java Gateway</h3>
+          <p>Spring Security OAuth2, the SmartScopeEnforcer pattern, Keycloak realm configuration, and the .well-known discovery endpoint.</p>
+          <span class="coming-soon-badge">Coming soon</span>
+        </div>
+        <div class="post-card-right">
+          <div class="read-time">~14 min</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>About</h4>
+      <p class="about-text">
+        <strong>Akhil Ester</strong> — architect working at the intersection of enterprise Java, health interoperability standards, and national-scale digital infrastructure.
+        Writing about things I've actually built and broken.
+      </p>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>HIE Series</h4>
+      <ul class="series-list">
+        <li class="active"><a href="post-openhim.html">1. Replacing OpenHIM with one JAR</a></li>
+        <li class="upcoming"><a href="#">2. Patient Registry with HAPI FHIR MDM</a></li>
+        <li class="upcoming"><a href="#">3. IHE BALP audit trail</a></li>
+        <li class="upcoming"><a href="#">4. SMART on FHIR in a Java gateway</a></li>
+        <li class="upcoming"><a href="#">5. National facility registry via mCSD</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Topics</h4>
+      <div class="tag-cloud">
+        <a href="#">OpenHIM</a><a href="#">FHIR R4</a><a href="#">Spring Boot</a>
+        <a href="#">Apache Camel</a><a href="#">IHE</a><a href="#">HAPI FHIR</a>
+        <a href="#">SMART</a><a href="#">HL7v2</a><a href="#">Java 17</a>
+        <a href="#">HIE</a><a href="#">BALP</a><a href="#">ATNA</a>
+        <a href="#">PostgreSQL</a><a href="#">Keycloak</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="logo">akhester.blog</div>
+  <p>Deep technical writing for architects and engineers. No fluff.</p>
+  <nav>
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">RSS</a>
+  </nav>
+</footer>
+
+</body>
+</html>
